@@ -7,4 +7,6 @@ void main()
     {
         printf("%d\t", marks[i]);
     }
+    printf("\nsize of marks in bytes:");
+    printf("%d", sizeof(marks));
 }
