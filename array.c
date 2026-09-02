@@ -2,5 +2,9 @@
 void main()
 {
     int marks[] = {40, 50, 80, 90, 55, 65};
-    printf("%d", marks[3]);
+    int i;
+    for (i = 0; i <= 5; i++)
+    {
+        printf("%d\t", marks[i]);
+    }
 }
