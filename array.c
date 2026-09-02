@@ -1,5 +1,6 @@
 #include <stdio.h>
 void main()
 {
-    printf("my name is shailendra..");
+    int marks[] = {40, 50, 80, 90, 55, 65};
+    printf("%d", marks[3]);
 }
