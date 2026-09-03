@@ -2,16 +2,28 @@
 void main()
 {
     int marks[] = {40, 50, 80, 90, 55, 65};
-    int i, student[5];
-    for (i = 0; i <= 5; i++)
+    int i, student[5], min, temp = 0;
+    // for (i = 0; i <= 5; i++)
+    // {
+    //     printf("%d\t", marks[i]);
+    // }
+    // printf("\nsize of marks in bytes:");
+    // printf("%d", sizeof(marks));
+    // printf("\nenter elements:");
+    // for (i = 0; i < 5; i++)
+    // {
+    //     scanf("%d", &student[i]);
+    // }
+    printf("find the smallest number from the given array");
+    min = marks[0];
+    for (i = 1; i < 6; i++)
     {
-        printf("%d\t", marks[i]);
+        if (min > marks[i])
+        {
+            temp = min;
+            min = marks[i];
+            marks[i] = temp;
+        }
     }
-    printf("\nsize of marks in bytes:");
-    printf("%d", sizeof(marks));
-    printf("\nenter elements:");
-    for (i = 0; i < 5; i++)
-    {
-        scanf("%d", &student[i]);
-    }
+    printf("\nsmallest number is:%d", min);
 }
