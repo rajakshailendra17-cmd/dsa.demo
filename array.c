@@ -116,7 +116,7 @@ int main(void)
 {
     int arr[] = {10, 20, 30, 40, 50};
     // lsearch(arr, 5);
-    reverseArray(arr, 5);
+    // reverseArray(arr, 5);
     printf("\nReversed array: ");
     for (int i = 0; i < 5; i++)
     {
