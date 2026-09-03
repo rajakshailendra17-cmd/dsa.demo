@@ -71,35 +71,56 @@
 
 #include <stdio.h>
 
-void lsearch(int arr[], int size)
+// void lsearch(int arr[], int size)
+//{
+//     int found = 1, temp = -1, n;
+//     printf("enter number to be search:");
+//     scanf("%d", &n);
+
+// for (int i = 0; i < size; i++)
+//{
+//  if (n == arr[i])
+//{
+//  found = 0;
+// temp = i;
+// break;
+//}
+//}
+
+// if (found == 0)
+//{
+//   printf("number is found successfully at index %d", temp);
+//}
+// else
+//{
+//  printf("number is not found");
+//}
+//}
+
+void reverseArray(int arr[], int size)
 {
-    int found = 1, temp = -1, n;
-    printf("enter number to be search:");
-    scanf("%d", &n);
+    int start = 0;
+    int end = size - 1;
 
-    for (int i = 0; i < size; i++)
+    while (start < end)
     {
-        if (n == arr[i])
-        {
-            found = 0;
-            temp = i;
-            break;
-        }
-    }
-
-    if (found == 0)
-    {
-        printf("number is found successfully at index %d", temp);
-    }
-    else
-    {
-        printf("number is not found");
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
     }
 }
 
 int main(void)
 {
     int arr[] = {10, 20, 30, 40, 50};
-    lsearch(arr, 5);
+    // lsearch(arr, 5);
+    reverseArray(arr, 5);
+    printf("\nReversed array: ");
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", arr[i]);
+    }
     return 0;
 }
