@@ -14,16 +14,26 @@ void main()
     // {
     //     scanf("%d", &student[i]);
     // }
-    printf("find the smallest number from the given array");
-    min = marks[0];
-    for (i = 1; i < 6; i++)
+    // printf("find the smallest number from the given array");
+    // min = marks[0];
+    // for (i = 1; i < 6; i++)
+    // {
+    //     if (min > marks[i])
+    //     {
+    //         temp = min;
+    //         min = marks[i];
+    //         marks[i] = temp;
+    //     }
+    // }
+    // printf("\nsmallest number is:%d", min);
+    int smallest = marks[0];
+    int largest = marks[0];
+    for (i = 0; i < 6; i++)
     {
-        if (min > marks[i])
+        if (largest < marks[i])
         {
-            temp = min;
-            min = marks[i];
-            marks[i] = temp;
+            largest = marks[i];
         }
     }
-    printf("\nsmallest number is:%d", min);
+    printf("largest number is:%d", largest);
 }
