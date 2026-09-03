@@ -1,8 +1,22 @@
 #include <stdio.h>
+void changearr(int marks[], int size)
+{
+    printf("in function\n");
+    for (int i = 0; i < size; i++)
+    {
+        marks[i] = 2 * marks[i];
+    }
+}
 void main()
 {
     int marks[] = {40, 50, 80, 90, 55, 65};
     int i, student[5], min, temp = 0;
+    changearr(marks, 6);
+    printf("in main\n");
+    for (i = 0; i < 6; i++)
+    {
+        printf("%d\t", marks[i]);
+    }
     // for (i = 0; i <= 5; i++)
     // {
     //     printf("%d\t", marks[i]);
