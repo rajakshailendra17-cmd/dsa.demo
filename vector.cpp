@@ -1,18 +1,35 @@
 #include <stdio.h>
 #include <vector>
-class Solution
+// class Solution
+// {
+// public:
+//     int singleNumber(std::vector<int> &vec)
+//     {
+//         int ans = 0;
+//         for (int i = 0; i < vec.size(); i++)
+//         {
+//             ans = ans ^ vec[i];
+//         }
+//         return ans;
+//     }
+// };
+void linearsearch(std::vector<int> vec, int key)
 {
-public:
-    int singleNumber(std::vector<int> &vec)
+    int found = 0;
+    for (int i = 0; i < vec.size(); i++)
     {
-        int ans = 0;
-        for (int i = 0; i < vec.size(); i++)
+        if (vec[i] == key)
         {
-            ans = ans ^ vec[i];
+            printf("\n%d is found at index %d", key, i);
+            found = 1;
+            break;
         }
-        return ans;
     }
-};
+    if (found == 0)
+    {
+        printf("\n%d is not found in vector", key);
+    }
+}
 int main()
 {
     std::vector<int> vec; // 0
@@ -35,9 +52,10 @@ int main()
     // printf("\n%d", vec.at(2));
     // printf("\ncapacity of vector is:");
     // printf("%d", vec.capacity());
-    Solution sol;
-    int result = sol.singleNumber(vec);
-    printf("\nSingle number is: %d", result);
+    // Solution sol;
+    // int result = sol.singleNumber(vec);
+    // printf("\nSingle number is: %d", result);
+    linearsearch(vec, 40);
 
     return 0;
 }
