@@ -18,8 +18,9 @@ int main()
     // printf("%d", vec.front());
     // printf("\nend value is :");
     // printf("%d", vec.back());
-    printf("\ndisplay value of any index of vector:");
-    printf("\n%d", vec.at(2));
-
+    // printf("\ndisplay value of any index of vector:");
+    // printf("\n%d", vec.at(2));
+    printf("\ncapacity of vector is:");
+    printf("%d", vec.capacity());
     return 0;
 }
