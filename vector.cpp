@@ -14,8 +14,10 @@ int main()
     {
         printf("\n%d ", vec[i]);
     }
-    printf("\nfront value is:");
-    printf("%d", vec.front());
+    // printf("\nfront value is:");
+    // printf("%d", vec.front());
+    printf("\nend value is :");
+    printf("%d", vec.back());
 
     return 0;
 }
