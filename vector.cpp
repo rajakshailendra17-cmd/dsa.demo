@@ -16,8 +16,10 @@ int main()
     }
     // printf("\nfront value is:");
     // printf("%d", vec.front());
-    printf("\nend value is :");
-    printf("%d", vec.back());
+    // printf("\nend value is :");
+    // printf("%d", vec.back());
+    printf("\ndisplay value of any index of vector:");
+    printf("\n%d", vec.at(2));
 
     return 0;
 }
