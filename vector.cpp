@@ -30,28 +30,28 @@
 //         printf("\n%d is not found in vector", key);
 //     }
 // }
-void reverse(std::vector<int> &vec)
-{
-    int start = 0;
-    int end = vec.size() - 1;
-    while (start < end)
-    {
-        std::swap(vec[start], vec[end]);
-        start++;
-        end--;
-    }
-}
+// void reverse(std::vector<int> &vec)
+// {
+//     int start = 0;
+//     int end = vec.size() - 1;
+//     while (start < end)
+//     {
+//         std::swap(vec[start], vec[end]);
+//         start++;
+//         end--;
+//     }
+// }
 int main()
 {
     std::vector<int> vec; // 0
-    vec.push_back(10);
-    vec.push_back(20);
-    vec.push_back(40);
-    vec.push_back(20);
-    vec.push_back(10);
-    vec.push_back(30);
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(4);
+    vec.push_back(2);
+    vec.push_back(1);
+    vec.push_back(3);
     // vec.pop_back();
-    printf("size of vector:%d", vec.size());
+    // printf("size of vector:%d", vec.size());
     // for (int i = 0; i < vec.size(); i++)
     // {
     //     printf("\n%d ", vec[i]);
@@ -68,11 +68,23 @@ int main()
     // int result = sol.singleNumber(vec);
     // printf("\nSingle number is: %d", result);
     // linearsearch(vec, 40);
-    reverse(vec);
-    printf("\nVector after reversing:");
-    for (int i = 0; i < vec.size(); i++)
+    // reverse(vec);
+    // printf("\nVector after reversing:");
+    // for (int i = 0; i < vec.size(); i++)
+    // {
+    //     printf("\n%d ", vec[i]);
+    // }
+    for (int start = 0; start < vec.size(); start++)
     {
-        printf("\n%d ", vec[i]);
+        for (int end = start; end < vec.size(); end++)
+        {
+            for (int i = start; i <= end; i++)
+            {
+                printf("%d", vec[i]);
+            }
+            printf(" ");
+        }
+        printf("\n");
     }
 
     return 0;
