@@ -13,11 +13,24 @@ int main()
     // distance = sqrt(pow(X2 - X1, 2) + pow(Y2 - Y1, 2));
     // cout << "The distance between the two points is: " << distance << endl;
     // return 0;
-    // int n;
-    // cout << "Enter any number: ";
-    // cin >> n;
-    // for (int i = 1; i <= n; i++)
-    // {
+    int n;
+    cout << "Enter any number: ";
+    cin >> n;
+    for (int i = 2; i <= n; i++)
+    {
+        int count = 0;
+        for (int j = 1; j <= i; j++)
+        {
+            if (i % j == 0)
+            {
+                count++;
+            }
+        }
+        if (count == 2)
+        {
+            cout << i << " ";
+        }
+    }
     //     for (int j = 1; j <= i; j++)
     //     {
     //         if(j%i==0)
@@ -27,14 +40,14 @@ int main()
     //  }
     // cout << endl;
     //}
-    int p;
-    float r, t, si;
-    cout << "Enter principal amount: ";
-    cin >> p;
-    cout << "Enter rate of interest: ";
-    cin >> r;
-    cout << "Enter time in years: ";
-    cin >> t;
-    si = (p * r * t) / 100;
-    cout << "Simple Interest = " << si << endl;
+    //     int p;
+    //     float r, t, si;
+    //     cout << "Enter principal amount: ";
+    //     cin >> p;
+    //     cout << "Enter rate of interest: ";
+    //     cin >> r;
+    //     cout << "Enter time in years: ";
+    //     cin >> t;
+    //     si = (p * r * t) / 100;
+    //     cout << "Simple Interest = " << si << endl;
 }
