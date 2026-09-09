@@ -5,8 +5,8 @@ public class dsa {
         String name = "programmer";
         System.out.println("Hello, " + name);
         Scanner sc = new Scanner(System.in);
-        int X = sc.nextInt();
-        int Y = sc.nextInt();
+        long X = sc.nextLong();
+        long Y = sc.nextLong();
 
         System.out.println(X + " + " + Y + " = " + (X + Y));
         System.out.println(X + " * " + Y + " = " + (X * Y));
