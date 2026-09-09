@@ -3,13 +3,16 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        long A = sc.nextLong();
-        long B = sc.nextLong();
-        long C = sc.nextLong();
-        long D = sc.nextLong();
-        long X;
-        X = (A * B) - (C * D);
-        System.out.println("Difference = " + X);
+        // long A = sc.nextLong();
+        // long B = sc.nextLong();
+        // long C = sc.nextLong();
+        // long D = sc.nextLong();
+        // long X;
+        // X = (A * B) - (C * D);
+        // System.out.println("Difference = " + X);
+        double R = sc.nextDouble();
+        double Area = 3.14159 * R * R;
+        System.out.printf("%.9f%n", Area);
 
         sc.close();
 
