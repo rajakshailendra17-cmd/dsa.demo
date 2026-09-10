@@ -4,15 +4,22 @@ public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         char X = sc.next().charAt(0);
-        if (Character.isDigit(X)) {
-            System.out.println("IS DIGIT");
-        } else if (Character.isAlphabetic(X) && Character.isUpperCase(X)) {
-            System.out.println("ALPHA");
-            System.out.println("IS CAPITAL");
+        if (Character.isLowerCase(X)) {
+            X = Character.toUpperCase(X);
+            System.out.println(X);
         } else {
-            System.out.println("ALPHA");
-            System.out.println("IS SMALL");
+            X = Character.toLowerCase(X);
+            System.out.println(X);
         }
+        // if (Character.isDigit(X)) {
+        // System.out.println("IS DIGIT");
+        // } else if (Character.isAlphabetic(X) && Character.isUpperCase(X)) {
+        // System.out.println("ALPHA");
+        // System.out.println("IS CAPITAL");
+        // } else {
+        // System.out.println("ALPHA");
+        // System.out.println("IS SMALL");
+        // }
 
         // String F1 = sc.next();
         // String S1 = sc.next();
