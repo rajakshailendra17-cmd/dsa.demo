@@ -5,31 +5,62 @@ struct Point
 {
     double x;
     double y;
+
+    void set_x(double a)
+    {
+        if (a < 0)
+        {
+            x = 1;
+        }
+        else
+        {
+            x = a;
+        }
+        cout << "X coordinate is: " << x << endl;
+    }
+    void set_y(double b)
+    {
+        if (b < 0)
+        {
+            y = 1;
+        }
+        else
+        {
+            y = b;
+        }
+        cout << "Y coordinate is: " << y << endl;
+    }
 };
-struct complex
-{
-    double real;
-    double imag;
-};
+// struct complex
+// {
+//     double real;
+//     double imag;
+// };
 
 int main()
 {
-    complex c1, c2;
-    cout << "Enter the real and imaginary parts of the first complex number: ";
-    cin >> c1.real >> c1.imag;
-    cout << "Enter the real and imaginary parts of the second complex number: ";
-    cin >> c2.real >> c2.imag;
-    complex sum;
-    sum.real = c1.real + c2.real;
-    sum.imag = c1.imag + c2.imag;
-    cout << "The sum of the two complex numbers is: " << sum.real << " + " << sum.imag << "i" << endl;
     Point p1, p2;
-    cout << "Enter the coordinates of the first point (X1, Y1): ";
-    cin >> p1.x >> p1.y;
-    cout << "Enter the coordinates of the second point (X2, Y2): ";
-    cin >> p2.x >> p2.y;
-    double distance = sqrt(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2));
-    cout << "The distance between the two points is: " << distance << endl;
+    p1.set_x(-5);
+    p1.set_y(10);
+    p2.set_x(5);
+    p2.set_y(-10);
+
+    // complex c1, c2;
+    // cout << "Enter the real and imaginary parts of the first complex number: ";
+    // cin >> c1.real >> c1.imag;
+    // cout << "Enter the real and imaginary parts of the second complex number: ";
+    // cin >> c2.real >> c2.imag;
+    // complex sum;
+    // sum.real = c1.real + c2.real;
+    // sum.imag = c1.imag + c2.imag;
+    // cout << "The sum of the two complex numbers is: " << sum.real << " + " << sum.imag << "i" << endl;
+    // Point p1, p2;
+    // cout << "Enter the coordinates of the first point (X1, Y1): ";
+    // cin >> p1.x >> p1.y;
+    // cout << "Enter the coordinates of the second point (X2, Y2): ";
+    // cin >> p2.x >> p2.y;
+    // double distance = sqrt(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2));
+    // cout << "The distance between the two points is: " << distance << endl;
     // double X1, Y1, X2, Y2;
     // double distance;
     // cout << "Enter the coordinates of the first point (X1, Y1): ";
@@ -76,4 +107,5 @@ int main()
     //     cin >> t;
     //     si = (p * r * t) / 100;
     //     cout << "Simple Interest = " << si << endl;
+    return 0;
 }

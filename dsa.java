@@ -3,6 +3,14 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        long A = sc.nextLong();
+        long B = sc.nextLong();
+        if (A >= B) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
         // long N = sc.nextLong();
         // long M = sc.nextLong();
         // long sum;
@@ -19,15 +27,18 @@ public class dsa {
         // System.out.println("ceil" + " " + (int) Math.ceil(sum));
         // System.out.println("round" + " " + (int) Math.round(sum));
 
-        long val1 = sc.nextLong();
-        long val2 = sc.nextLong();
-        double val3 = (double) val1 / val2;
+        // long val1 = sc.nextLong();
+        // long val2 = sc.nextLong();
+        // double val3 = (double) val1 / val2;
 
-        System.out.println("floor " + val1 + " / " + val2 + " = " + (long) Math.floor(val3));
-        System.out.println("ceil " + val1 + " / " + val2 + " = " + (long) Math.ceil(val3));
-        System.out.println("round " + val1 + " / " + val2 + " = " + Math.round(val3));
+        // System.out.println("floor " + val1 + " / " + val2 + " = " + (long)
+        // Math.floor(val3));
+        // System.out.println("ceil " + val1 + " / " + val2 + " = " + (long)
+        // Math.ceil(val3));
+        // System.out.println("round " + val1 + " / " + val2 + " = " +
+        // Math.round(val3));
 
         sc.close();
-
     }
+
 }
