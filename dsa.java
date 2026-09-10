@@ -3,11 +3,22 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        long A = sc.nextLong();
-        long B = sc.nextLong();
-        long C = sc.nextLong();
-        long max;
-        long min;
+        String F1 = sc.next();
+        String S1 = sc.next();
+
+        String F2 = sc.next();
+        String S2 = sc.next();
+        if (S1.equals(S2)) {
+            System.out.println("Are Brothers");
+        } else {
+            System.out.println("Not");
+        }
+
+        // long A = sc.nextLong();
+        // long B = sc.nextLong();
+        // long C = sc.nextLong();
+        // long max;
+        // long min;
         // if (A % B == 0 && B != 0) {
         // System.out.println("Multiples");
         // } else if (B % A == 0 && A != 0) {
@@ -15,25 +26,25 @@ public class dsa {
         // } else {
         // System.out.println("No Multiples");
         // }
-        if (A > B && A > C) {
-            max = A;
-        } else {
-            if (B > C) {
-                max = B;
-            } else {
-                max = C;
-            }
-        }
-        if (A < B && A < C) {
-            min = A;
-        } else {
-            if (B < C) {
-                min = B;
-            } else {
-                min = C;
-            }
-        }
-        System.out.println(min + " " + max);
+        // if (A > B && A > C) {
+        // max = A;
+        // } else {
+        // if (B > C) {
+        // max = B;
+        // } else {
+        // max = C;
+        // }
+        // }
+        // if (A < B && A < C) {
+        // min = A;
+        // } else {
+        // if (B < C) {
+        // min = B;
+        // } else {
+        // min = C;
+        // }
+        // }
+        // System.out.println(min + " " + max);
         // if (A >= B) {
         // System.out.println("Yes");
         // } else {
