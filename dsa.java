@@ -5,11 +5,18 @@ public class dsa {
         Scanner sc = new Scanner(System.in);
         long A = sc.nextLong();
         long B = sc.nextLong();
-        if (A >= B) {
-            System.out.println("Yes");
+        if (A % B == 0 && B != 0) {
+            System.out.println("Multiples");
+        } else if (B % A == 0 && A != 0) {
+            System.out.println("Multiples");
         } else {
-            System.out.println("No");
+            System.out.println("No Multiples");
         }
+        // if (A >= B) {
+        // System.out.println("Yes");
+        // } else {
+        // System.out.println("No");
+        // }
 
         // long N = sc.nextLong();
         // long M = sc.nextLong();
