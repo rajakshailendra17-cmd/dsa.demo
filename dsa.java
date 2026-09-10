@@ -3,16 +3,27 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String F1 = sc.next();
-        String S1 = sc.next();
-
-        String F2 = sc.next();
-        String S2 = sc.next();
-        if (S1.equals(S2)) {
-            System.out.println("Are Brothers");
+        char X = sc.next().charAt(0);
+        if (Character.isDigit(X)) {
+            System.out.println("IS DIGIT");
+        } else if (Character.isAlphabetic(X) && Character.isUpperCase(X)) {
+            System.out.println("ALPHA");
+            System.out.println("IS CAPITAL");
         } else {
-            System.out.println("Not");
+            System.out.println("ALPHA");
+            System.out.println("IS SMALL");
         }
+
+        // String F1 = sc.next();
+        // String S1 = sc.next();
+
+        // String F2 = sc.next();
+        // String S2 = sc.next();
+        // if (S1.equals(S2)) {
+        // System.out.println("Are Brothers");
+        // } else {
+        // System.out.println("Not");
+        // }
 
         // long A = sc.nextLong();
         // long B = sc.nextLong();
