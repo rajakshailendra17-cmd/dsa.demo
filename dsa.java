@@ -5,13 +5,35 @@ public class dsa {
         Scanner sc = new Scanner(System.in);
         long A = sc.nextLong();
         long B = sc.nextLong();
-        if (A % B == 0 && B != 0) {
-            System.out.println("Multiples");
-        } else if (B % A == 0 && A != 0) {
-            System.out.println("Multiples");
+        long C = sc.nextLong();
+        long max;
+        long min;
+        // if (A % B == 0 && B != 0) {
+        // System.out.println("Multiples");
+        // } else if (B % A == 0 && A != 0) {
+        // System.out.println("Multiples");
+        // } else {
+        // System.out.println("No Multiples");
+        // }
+        if (A > B && A > C) {
+            max = A;
         } else {
-            System.out.println("No Multiples");
+            if (B > C) {
+                max = B;
+            } else {
+                max = C;
+            }
         }
+        if (A < B && A < C) {
+            min = A;
+        } else {
+            if (B < C) {
+                min = B;
+            } else {
+                min = C;
+            }
+        }
+        System.out.println(min + " " + max);
         // if (A >= B) {
         // System.out.println("Yes");
         // } else {
