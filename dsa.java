@@ -3,14 +3,61 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        char X = sc.next().charAt(0);
-        if (Character.isLowerCase(X)) {
-            X = Character.toUpperCase(X);
-            System.out.println(X);
-        } else {
-            X = Character.toLowerCase(X);
-            System.out.println(X);
+        String input = sc.next();
+
+        char operator = ' ';
+        int index = -1;
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            if (c == '+' || c == '-' || c == '*' || c == '/') {
+                operator = c;
+                index = i;
+                break;
+            }
         }
+
+        long A = Long.parseLong(input.substring(0, index));
+        long B = Long.parseLong(input.substring(index + 1));
+
+        long result = 0;
+        switch (operator) {
+            case '+':
+                result = A + B;
+                break;
+            case '-':
+                result = A - B;
+                break;
+            case '*':
+                result = A * B;
+                break;
+            case '/':
+                result = A / B;
+                break;
+        }
+
+        System.out.println(result);
+
+        // long A = sc.nextLong();
+
+        // if (S == '+') {
+        // System.out.println(A + B);
+        // } else if (S == '-') {
+        // System.out.println(A - B);
+        // } else if (S == '*') {
+        // System.out.println(A * B);
+        // } else if (S == '/') {
+        // System.out.println(A / B);
+        // } else {
+        // System.out.println("Invalid Operator");
+        // }
+        // char X = sc.next().charAt(0);
+        // if (Character.isLowerCase(X)) {
+        // X = Character.toUpperCase(X);
+        // System.out.println(X);
+        // } else {
+        // X = Character.toLowerCase(X);
+        // System.out.println(X);
+        // }
         // if (Character.isDigit(X)) {
         // System.out.println("IS DIGIT");
         // } else if (Character.isAlphabetic(X) && Character.isUpperCase(X)) {
