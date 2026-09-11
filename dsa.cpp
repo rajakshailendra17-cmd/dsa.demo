@@ -15,8 +15,14 @@ struct complex
         cout << real << "+i" << imag << endl;
     }
 };
+a class has two members
+        data
+        member(real, imag) 2. member function(init, display)
+            .-- --> object = when a class is instantiated(initialize)
+it becomes an object.actual memory is allocated only to an object and to a class
 
-int main()
+    int
+    main()
 {
     double a, b;
     complex c;
