@@ -3,39 +3,49 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String input = sc.next();
 
-        char operator = ' ';
-        int index = -1;
-        for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
-            if (c == '+' || c == '-' || c == '*' || c == '/') {
-                operator = c;
-                index = i;
-                break;
-            }
+        char firstDigit = sc.next().charAt(0);
+        int digit = firstDigit - '0';
+
+        if (digit % 2 == 0) {
+            System.out.println("EVEN");
+        } else {
+            System.out.println("ODD");
         }
 
-        long A = Long.parseLong(input.substring(0, index));
-        long B = Long.parseLong(input.substring(index + 1));
+        // String input = sc.next();
 
-        long result = 0;
-        switch (operator) {
-            case '+':
-                result = A + B;
-                break;
-            case '-':
-                result = A - B;
-                break;
-            case '*':
-                result = A * B;
-                break;
-            case '/':
-                result = A / B;
-                break;
-        }
+        // char operator = ' ';
+        // int index = -1;
+        // for (int i = 0; i < input.length(); i++) {
+        // char c = input.charAt(i);
+        // if (c == '+' || c == '-' || c == '*' || c == '/') {
+        // operator = c;
+        // index = i;
+        // break;
+        // }
+        // }
 
-        System.out.println(result);
+        // long A = Long.parseLong(input.substring(0, index));
+        // long B = Long.parseLong(input.substring(index + 1));
+
+        // long result = 0;
+        // switch (operator) {
+        // case '+':
+        // result = A + B;
+        // break;
+        // case '-':
+        // result = A - B;
+        // break;
+        // case '*':
+        // result = A * B;
+        // break;
+        // case '/':
+        // result = A / B;
+        // break;
+        // }
+
+        // System.out.println(result);
 
         // long A = sc.nextLong();
 
