@@ -3,15 +3,17 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        long N = sc.nextLong();
-        long years = N / 365;
-        N = N % 365;
-        long months = N / 30;
-        N = N % 30;
-        long days = N;
-        System.out.println(years + " " + "years");
-        System.out.println(months + " " + "months");
-        System.out.println(days + " " + "days");
+        double X = sc.nextDouble();
+        interval = (0,25], (25,50], (50,75], (75,100];
+        // long N = sc.nextLong();
+        // long years = N / 365;
+        // N = N % 365;
+        // long months = N / 30;
+        // N = N % 30;
+        // long days = N;
+        // System.out.println(years + " " + "years");
+        // System.out.println(months + " " + "months");
+        // System.out.println(days + " " + "days");
 
         // double X = sc.nextDouble();
         // double Y = sc.nextDouble();

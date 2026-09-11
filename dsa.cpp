@@ -1,49 +1,29 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-struct Point
+struct complex
 {
-    double x;
-    double y;
-
-    void set_x(double a)
+    double real;
+    double imag;
+    void init(double r, double i)
     {
-        if (a < 0)
-        {
-            x = 1;
-        }
-        else
-        {
-            x = a;
-        }
-        cout << "X coordinate is: " << x << endl;
+        real = r;
+        imag = i;
     }
-    void set_y(double b)
+    void display()
     {
-        if (b < 0)
-        {
-            y = 1;
-        }
-        else
-        {
-            y = b;
-        }
-        cout << "Y coordinate is: " << y << endl;
+        cout << real << "+i" << imag << endl;
     }
 };
-// struct complex
-// {
-//     double real;
-//     double imag;
-// };
 
 int main()
 {
-    Point p1, p2;
-    p1.set_x(-5);
-    p1.set_y(10);
-    p2.set_x(5);
-    p2.set_y(-10);
+    double a, b;
+    complex c;
+    cout << "Enter the real and imaginary parts of the complex number: ";
+    cin >> a >> b;
+    c.init(a, b);
+    c.display();
 
     // complex c1, c2;
     // cout << "Enter the real and imaginary parts of the first complex number: ";
