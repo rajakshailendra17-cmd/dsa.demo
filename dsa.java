@@ -1,27 +1,44 @@
 import java.util.Scanner;
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Given a number N
+        // Determine whether N
+        // is float number or integer number
+        String input = sc.nextLine();
+
+        if (input.contains(".")) {
+            String[] parts = input.split("\\.");
+
+            if (parts[1].matches("0+")) {
+                System.out.println("int " + parts[0]);
+            } else {
+                System.out.println("float " + parts[0] + " " + "0." + parts[1]);
+            }
+        } else {
+            System.out.println("int " + input);
+        }
+
         // Given three numbers A, B, C. Print these numbers in ascending order followed
         // by a blank line and then the values in the sequence as they were read.
-        long A = sc.nextLong();
-        long B = sc.nextLong();
-        long C = sc.nextLong();
-        long[] arr = { A, B, C };
-        Arrays.sort(arr);
+        // long A = sc.nextLong();
+        // long B = sc.nextLong();
+        // long C = sc.nextLong();
+        // long[] arr = { A, B, C };
+        // Arrays.sort(arr);
 
-        for (int i = 0; i < 3; i++) {
-            System.out.print(arr[i] + " ");
-            System.out.println();
+        // for (int i = 0; i < 3; i++) {
+        // System.out.print(arr[i] + " ");
+        // System.out.println();
 
-        }
-        System.out.println();
+        // }
+        // System.out.println();
 
-        System.out.println(A);
-        System.out.println(B);
-        System.out.println(C);
+        // System.out.println(A);
+        // System.out.println(B);
+        // System.out.println(C);
 
         // double X = sc.nextDouble();
 
