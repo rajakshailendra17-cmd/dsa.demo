@@ -1,21 +1,40 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Given three numbers A, B, C. Print these numbers in ascending order followed
+        // by a blank line and then the values in the sequence as they were read.
+        long A = sc.nextLong();
+        long B = sc.nextLong();
+        long C = sc.nextLong();
+        long[] arr = { A, B, C };
+        Arrays.sort(arr);
 
-        double X = sc.nextDouble();
+        for (int i = 0; i < 3; i++) {
+            System.out.print(arr[i] + " ");
+            System.out.println();
 
-        if (X >= 0 && X <= 25)
-            System.out.println("Interval [0,25]");
-        else if (X > 25 && X <= 50)
-            System.out.println("Interval (25,50]");
-        else if (X > 50 && X <= 75)
-            System.out.println("Interval (50,75]");
-        else if (X > 75 && X <= 100)
-            System.out.println("Interval (75,100]");
-        else
-            System.out.println("Out of Intervals");
+        }
+        System.out.println();
+
+        System.out.println(A);
+        System.out.println(B);
+        System.out.println(C);
+
+        // double X = sc.nextDouble();
+
+        // if (X >= 0 && X <= 25)
+        // System.out.println("Interval [0,25]");
+        // else if (X > 25 && X <= 50)
+        // System.out.println("Interval (25,50]");
+        // else if (X > 50 && X <= 75)
+        // System.out.println("Interval (50,75]");
+        // else if (X > 75 && X <= 100)
+        // System.out.println("Interval (75,100]");
+        // else
+        // System.out.println("Out of Intervals");
 
         // long N = sc.nextLong();
         // long years = N / 365;
