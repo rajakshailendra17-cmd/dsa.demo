@@ -5,32 +5,46 @@ public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        long l1 = sc.nextLong();
+        long r1 = sc.nextLong();
+        long l2 = sc.nextLong();
+        long r2 = sc.nextLong();
+
+        long start = Math.max(l1, l2);
+        long end = Math.min(r1, r2);
+
+        if (start <= end) {
+            System.out.println(start + " " + end);
+        } else {
+            System.out.println(-1);
+        }
+
+        sc.close();
+
         // Given a mathematical expression. The expression will be one of the following
         // expressions:
 
         // A + B = C, A - B = C and A * B = C
 
-        int A = sc.nextInt();
-        String S = sc.next();
-        int B = sc.nextInt();
-        sc.next();
-        int C = sc.nextInt();
+        // int A = sc.nextInt();
+        // String S = sc.next();
+        // int B = sc.nextInt();
+        // sc.next();
+        // int C = sc.nextInt();
 
-        int result = 0;
-        if (S.equals("+"))
-            result = A + B;
-        else if (S.equals("-"))
-            result = A - B;
-        else if (S.equals("*"))
-            result = A * B;
+        // int result = 0;
+        // if (S.equals("+"))
+        // result = A + B;
+        // else if (S.equals("-"))
+        // result = A - B;
+        // else if (S.equals("*"))
+        // result = A * B;
 
-        if (result == C) {
-            System.out.println("Yes");
-        } else {
-            System.out.println(result);
-        }
-
-        sc.close();
+        // if (result == C) {
+        // System.out.println("Yes");
+        // } else {
+        // System.out.println(result);
+        // }
 
         // Given a comparison symbol S between two numbers A and B. Determine whether it
         // is Right or Wrong.
