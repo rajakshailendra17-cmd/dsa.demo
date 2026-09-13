@@ -4,19 +4,35 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given 4 numbers A B C and D. Print the last 2 digits from their
-        // Multiplication.
+        // Given 4 numbers A,B,C and D. If A^B > C^D print "YES" otherwise, print "NO".
 
         long A = sc.nextLong();
         long B = sc.nextLong();
         long C = sc.nextLong();
         long D = sc.nextLong();
 
-        long ans = ((A % 100) * (B % 100) * (C % 100) * (D % 100)) % 100;
+        double left = B * Math.log(A);
+        double right = D * Math.log(C);
 
-        System.out.printf("%02d%n", ans);
+        if (left > right) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
 
         sc.close();
+
+        // Given 4 numbers A B C and D. Print the last 2 digits from their
+        // Multiplication.
+
+        // long A = sc.nextLong();
+        // long B = sc.nextLong();
+        // long C = sc.nextLong();
+        // long D = sc.nextLong();
+
+        // long ans = ((A % 100) * (B % 100) * (C % 100) * (D % 100)) % 100;
+
+        // System.out.printf("%02d%n", ans);
 
         // Given 4 numbers
 
