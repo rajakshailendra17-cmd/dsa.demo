@@ -4,22 +4,64 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Given a comparison symbol S between two numbers A and B. Determine whether it
+        // is Right or Wrong.
+        // The comparison is as follows: A < B, A > B, A = B.
+        // Where A, B are two integer numbers and S refers to the sign between them.
+
+        String input = sc.nextLine().replaceAll("\\s+", "");
+        char operator = ' ';
+        int index = -1;
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            if (c == '<' || c == '>' || c == '=') {
+                operator = c;
+                index = i;
+                break;
+            }
+        }
+
+        long A = Long.parseLong(input.substring(0, index));
+        long B = Long.parseLong(input.substring(index + 1));
+
+        long result = 0;
+        switch (operator) {
+            case '<':
+                result = A < B ? 1 : 0;
+                break;
+            case '>':
+                result = A > B ? 1 : 0;
+                break;
+            case '=':
+                result = A == B ? 1 : 0;
+                break;
+            default:
+                System.out.println("Invalid operator");
+                break;
+
+        }
+
+        if (result == 1)
+            System.out.println("Right");
+        else
+            System.out.println("Wrong");
+
         // Given a number N
         // Determine whether N
         // is float number or integer number
-        String input = sc.nextLine();
+        // String input = sc.nextLine();
 
-        if (input.contains(".")) {
-            String[] parts = input.split("\\.");
+        // if (input.contains(".")) {
+        // String[] parts = input.split("\\.");
 
-            if (parts[1].matches("0+")) {
-                System.out.println("int " + parts[0]);
-            } else {
-                System.out.println("float " + parts[0] + " " + "0." + parts[1]);
-            }
-        } else {
-            System.out.println("int " + input);
-        }
+        // if (parts[1].matches("0+")) {
+        // System.out.println("int " + parts[0]);
+        // } else {
+        // System.out.println("float " + parts[0] + " " + "0." + parts[1]);
+        // }
+        // } else {
+        // System.out.println("int " + input);
+        // }
 
         // Given three numbers A, B, C. Print these numbers in ascending order followed
         // by a blank line and then the values in the sequence as they were read.
