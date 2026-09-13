@@ -4,47 +4,75 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // Given a mathematical expression. The expression will be one of the following
+        // expressions:
+
+        // A + B = C, A - B = C and A * B = C
+
+        int A = sc.nextInt();
+        String S = sc.next();
+        int B = sc.nextInt();
+        sc.next();
+        int C = sc.nextInt();
+
+        int result = 0;
+        if (S.equals("+"))
+            result = A + B;
+        else if (S.equals("-"))
+            result = A - B;
+        else if (S.equals("*"))
+            result = A * B;
+
+        if (result == C) {
+            System.out.println("Yes");
+        } else {
+            System.out.println(result);
+        }
+
+        sc.close();
+
         // Given a comparison symbol S between two numbers A and B. Determine whether it
         // is Right or Wrong.
         // The comparison is as follows: A < B, A > B, A = B.
         // Where A, B are two integer numbers and S refers to the sign between them.
 
-        String input = sc.nextLine().replaceAll("\\s+", "");
-        char operator = ' ';
-        int index = -1;
-        for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
-            if (c == '<' || c == '>' || c == '=') {
-                operator = c;
-                index = i;
-                break;
-            }
-        }
+        // String input = sc.nextLine().replaceAll("\\s+", "");
+        // char operator = ' ';
+        // int index = -1;
+        // for (int i = 0; i < input.length(); i++) {
+        // char c = input.charAt(i);
+        // if (c == '<' || c == '>' || c == '=') {
+        // operator = c;
+        // index = i;
+        // break;
+        // }
+        // }
 
-        long A = Long.parseLong(input.substring(0, index));
-        long B = Long.parseLong(input.substring(index + 1));
+        // long A = Long.parseLong(input.substring(0, index));
+        // long B = Long.parseLong(input.substring(index + 1));
 
-        long result = 0;
-        switch (operator) {
-            case '<':
-                result = A < B ? 1 : 0;
-                break;
-            case '>':
-                result = A > B ? 1 : 0;
-                break;
-            case '=':
-                result = A == B ? 1 : 0;
-                break;
-            default:
-                System.out.println("Invalid operator");
-                break;
+        // long result = 0;
+        // switch (operator) {
+        // case '<':
+        // result = A < B ? 1 : 0;
+        // break;
+        // case '>':
+        // result = A > B ? 1 : 0;
+        // break;
+        // case '=':
+        // result = A == B ? 1 : 0;
+        // break;
+        // default:
+        // System.out.println("Invalid operator");
+        // break;
 
-        }
+        // }
 
-        if (result == 1)
-            System.out.println("Right");
-        else
-            System.out.println("Wrong");
+        // if (result == 1)
+        // System.out.println("Right");
+        // else
+        // System.out.println("Wrong");
 
         // Given a number N
         // Determine whether N
@@ -272,7 +300,6 @@ public class dsa {
         // System.out.println("round " + val1 + " / " + val2 + " = " +
         // Math.round(val3));
 
-        sc.close();
     }
 
 }
