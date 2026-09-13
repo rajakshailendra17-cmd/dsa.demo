@@ -4,22 +4,35 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Given 4 numbers A B C and D. Print the last 2 digits from their
+        // Multiplication.
 
-        long l1 = sc.nextLong();
-        long r1 = sc.nextLong();
-        long l2 = sc.nextLong();
-        long r2 = sc.nextLong();
+        long A = sc.nextLong();
+        long B = sc.nextLong();
+        long C = sc.nextLong();
+        long D = sc.nextLong();
 
-        long start = Math.max(l1, l2);
-        long end = Math.min(r1, r2);
+        long ans = ((A % 100) * (B % 100) * (C % 100) * (D % 100)) % 100;
 
-        if (start <= end) {
-            System.out.println(start + " " + end);
-        } else {
-            System.out.println(-1);
-        }
+        System.out.printf("%02d%n", ans);
 
         sc.close();
+
+        // Given 4 numbers
+
+        // long l1 = sc.nextLong();
+        // long r1 = sc.nextLong();
+        // long l2 = sc.nextLong();
+        // long r2 = sc.nextLong();
+
+        // long start = Math.max(l1, l2);
+        // long end = Math.min(r1, r2);
+
+        // if (start <= end) {
+        // System.out.println(start + " " + end);
+        // } else {
+        // System.out.println(-1);
+        // }
 
         // Given a mathematical expression. The expression will be one of the following
         // expressions:
