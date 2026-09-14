@@ -4,15 +4,34 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // print the next alphabet of lowercase.
-        char ch = sc.next().charAt(0);
-        if (ch != 'z') {
-            System.out.println((char) (ch + 1));
+        // alibaba and puzzle.
+
+        long a = sc.nextLong();
+        long b = sc.nextLong();
+        long c = sc.nextLong();
+        long d = sc.nextLong();
+
+        if (a + b * c == d ||
+                a + b - c == d ||
+                a - b + c == d ||
+                a - b * c == d ||
+                a * b + c == d ||
+                a * b - c == d) {
+
+            System.out.println("YES");
         } else {
-            System.out.println('a');
+            System.out.println("NO");
         }
 
         sc.close();
+
+        // print the next alphabet of lowercase.
+        // char ch = sc.next().charAt(0);
+        // if (ch != 'z') {
+        // System.out.println((char) (ch + 1));
+        // } else {
+        // System.out.println('a');
+        // }
 
         // memo and momo,who will win.
         // long a = sc.nextLong();
