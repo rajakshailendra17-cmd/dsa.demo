@@ -4,13 +4,26 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // find the price before adding the discount on it.
-        double discount = sc.nextDouble();
-        double discounted_price = sc.nextDouble();
-        double price = discounted_price / (1 - (discount / 100));
-
-        System.out.printf("%.2f", price);
+        // memo and momo,who will win.
+        long a = sc.nextLong();
+        long b = sc.nextLong();
+        long k = sc.nextLong();
+        if (a % k == 0 && b % k == 0)
+            System.out.println("Both");
+        else if (a % k == 0 && b % k != 0)
+            System.out.println("Memo");
+        else if (a % k != 0 && b % k == 0)
+            System.out.println("Momo");
+        else
+            System.out.println("No One");
         sc.close();
+
+        // find the price before adding the discount on it.
+        // double discount = sc.nextDouble();
+        // double discounted_price = sc.nextDouble();
+        // double price = discounted_price / (1 - (discount / 100));
+
+        // System.out.printf("%.2f", price);
 
         // // Given 4 numbers A,B,C and D. If A^B > C^D print "YES" otherwise, print
         // "NO".
