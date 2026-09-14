@@ -4,23 +4,30 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given 4 numbers A,B,C and D. If A^B > C^D print "YES" otherwise, print "NO".
+        // find the price before adding the discount on it.
+        double discount = sc.nextDouble();
+        double discounted_price = sc.nextDouble();
+        double price = discounted_price / (1 - (discount / 100));
 
-        long A = sc.nextLong();
-        long B = sc.nextLong();
-        long C = sc.nextLong();
-        long D = sc.nextLong();
-
-        double left = B * Math.log(A);
-        double right = D * Math.log(C);
-
-        if (left > right) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
-        }
-
+        System.out.printf("%.2f", price);
         sc.close();
+
+        // // Given 4 numbers A,B,C and D. If A^B > C^D print "YES" otherwise, print
+        // "NO".
+
+        // long A = sc.nextLong();
+        // long B = sc.nextLong();
+        // long C = sc.nextLong();
+        // long D = sc.nextLong();
+
+        // double left = B * Math.log(A);
+        // double right = D * Math.log(C);
+
+        // if (left > right) {
+        // System.out.println("YES");
+        // } else {
+        // System.out.println("NO");
+        // }
 
         // Given 4 numbers A B C and D. Print the last 2 digits from their
         // Multiplication.
