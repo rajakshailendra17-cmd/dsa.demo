@@ -4,26 +4,40 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // alibaba and puzzle.
+        // Given two numbers a and b. You have to answer with "YES" if there is a
+        // non-empty interval consisting of numbers from lto r(l,l+1,l+2,...,r) with a
+        // odd numbers and b even numbers, or "NO" otherwise.
 
-        long a = sc.nextLong();
-        long b = sc.nextLong();
-        long c = sc.nextLong();
-        long d = sc.nextLong();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
 
-        if (a + b * c == d ||
-                a + b - c == d ||
-                a - b + c == d ||
-                a - b * c == d ||
-                a * b + c == d ||
-                a * b - c == d) {
-
+        if (a + b == 0) {
+            System.out.println("NO");
+        } else if (Math.abs(a - b) <= 1) {
             System.out.println("YES");
         } else {
             System.out.println("NO");
         }
-
         sc.close();
+
+        // alibaba and puzzle.
+
+        // long a = sc.nextLong();
+        // long b = sc.nextLong();
+        // long c = sc.nextLong();
+        // long d = sc.nextLong();
+
+        // if (a + b * c == d ||
+        // a + b - c == d ||
+        // a - b + c == d ||
+        // a - b * c == d ||
+        // a * b + c == d ||
+        // a * b - c == d) {
+
+        // System.out.println("YES");
+        // } else {
+        // System.out.println("NO");
+        // }
 
         // print the next alphabet of lowercase.
         // char ch = sc.next().charAt(0);
