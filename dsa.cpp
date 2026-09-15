@@ -1,38 +1,65 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-struct complex
+class rectangle
 {
-    double real;
-    double imag;
-    void init(double r, double i)
+public:
+    int length, breadth;
+    rectangle(int l, int b)
     {
-        real = r;
-        imag = i;
+        length = l;
+        breadth = b;
+        // cout << "hello" << endl;
+        cout << "lenght=" << length << endl;
+        cout << "breadth=" << breadth << endl;
     }
-    void display()
+    int area()
     {
-        if (imag >= 0)
-        {
-            cout << real << "+i" << imag << endl;
-        }
-        else
-        {
-            cout << real << "-i" << imag * (-1) << endl;
-        }
+        return length * breadth;
     }
 };
-
 int main()
 {
-    double a, b;
-    complex c;
-    cout << "Enter the real and imaginary parts of the complex number: ";
-    cin >> a >> b;
-    c.init(a, b);
-    c.display();
-    return 0;
+    rectangle r(2, 5);
+    cout << r.area() << endl;
 }
+// features of the default contsructor:
+// the name of the constructor should be same as the class name
+//  a constructor do not have any return type
+//  a default constructor which is provided by cpp is invisible.
+//  if we create a defualt constructor manualy the cpp takes away it's inbuilt constructor.
+//  struct complex
+//  {
+//      double real;
+//      double imag;
+//      void init(double r, double i)
+//      {
+//          real = r;
+//          imag = i;
+//      }
+//      void display()
+//      {
+//          if (imag >= 0)
+//          {
+//              cout << real << "+i" << imag << endl;
+//          }
+//          else
+//          {
+//              cout << real << "-i" << imag * (-1) << endl;
+//          }
+//      }
+//  };
+
+// int main()
+// {
+//     double a, b;
+//     complex c;
+//     cout << "Enter the real and imaginary parts of the complex number: ";
+//     cin >> a >> b;
+//     c.init(a, b);
+//     c.display();
+//     return 0;
+// }
 
 // complex c1, c2;
 // cout << "Enter the real and imaginary parts of the first complex number: ";
