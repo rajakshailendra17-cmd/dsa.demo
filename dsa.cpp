@@ -5,6 +5,11 @@ class rectangle
 {
 public:
     int length, breadth;
+    rectangle()
+    {
+        cout << "hello" << endl;
+    }
+
     rectangle(int l, int b)
     {
         length = l;
@@ -21,6 +26,7 @@ public:
 int main()
 {
     rectangle r(2, 5);
+    rectangle r1;
     cout << r.area() << endl;
 }
 // features of the default contsructor:
