@@ -3,13 +3,26 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
      Scanner sc = new Scanner(System.in);
-     // Given a number N. Print the maltiplication table of the number from 1 to 12.
-      int N = sc.nextInt();
-      for(int i=1;i<=12;i++){
-        System.out.println(N+" "+"*"+" "+i+" "+"="+" "+N*i);
+     // Given a number N. Print the factorial of number N.InputFirst line contains a number T (1 ≤ T ≤ 15) number of test cases.Next T lines will contain a number N (0 ≤ N ≤ 20).
+     int T = sc.nextInt();
+     for(int i=0;i<T;i++){
+        int N = sc.nextInt();
+        long fact = 1;
+        for(int j = 1;j<=N;j++){
+            fact =
+               fact*j;
+        }
+        System.out.println(fact);
         
-      }
+     }
+     sc.close();
 
+     // Given a number N. Print the maltiplication table of the number from 1 to 12.
+    //   int N = sc.nextInt();
+    //   for(int i=1;i<=12;i++){
+    //     System.out.println(N+" "+"*"+" "+i+" "+"="+" "+N*i);
+        
+    //   }
 
      // Given a number N, and N numbers, find maximum number in these N numbers.
 
@@ -27,12 +40,7 @@ public class loops {
     //     }
     //  }
     //  System.out.println(max);
-     sc.close();
      
-        
-     
-
-
      // Given multiple lines each line contains a number X which is a password. Print "Wrong" if the password is incorrect otherwise, print "Correct" and terminate the program.
      //Note: The "Correct" password is the number 1999
      
