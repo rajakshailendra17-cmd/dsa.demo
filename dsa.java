@@ -5,15 +5,38 @@ public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        long A = sc.nextLong(); // first number
-        long B = sc.nextLong(); // second number
+        long n = sc.nextLong();
+        long m = sc.nextLong();
+        long k = sc.nextLong();
 
-        // Peter Parker's addition (bitwise XOR)
-        long result = A ^ B;
+        long res2 = 0;
 
-        System.out.println(result);
+        long n2 = n, m2 = m, k2 = k;
+
+        long comboA = Math.min(Math.min(n2, m2), k2);
+        res2 += comboA;
+        n2 -= comboA;
+        m2 -= comboA;
+        k2 -= comboA;
+        long comboB = Math.min(Math.min(n2 / 2, m2), k2);
+        res2 += comboB;
+        n2 -= comboB * 2;
+        m2 -= comboB;
+        k2 -= comboB;
+        long comboC = Math.min(n2 / 2, k2);
+        res2 += comboC;
+
+        System.out.println(res2);
 
         sc.close();
+
+        // long A = sc.nextLong(); // first number
+        // long B = sc.nextLong(); // second number
+
+        // // Peter Parker's addition (bitwise XOR)
+        // long result = A ^ B;
+
+        // System.out.println(result);
 
         // Given two numbers a and b. You have to answer with "YES" if there is a
         // non-empty interval consisting of numbers from lto r(l,l+1,l+2,...,r) with a
