@@ -4,28 +4,47 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // A number of two digits is lucky if one of its digits is divisible by the
+        // other.
+        // Write a program to check whether a number is lucky
+
+
+        int n = sc.nextInt();
+
+        int tens = n / 10;
+        int ones = n % 10;
+
+        if (ones != 0 && tens % ones == 0 || tens != 0 && ones % tens == 0) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    
+       
+        
+
+        sc.close();
+
         // Given three numbers n, k and a. Identify whether the data type of n×ka is
         // int, long long or double.
 
-        long n = sc.nextLong();
-        long k = sc.nextLong();
-        long a = sc.nextLong();
+        // long n = sc.nextLong();
+        // long k = sc.nextLong();
+        // long a = sc.nextLong();
 
-        long numerator = n * k;
+        // long numerator = n * k;
 
-        if (numerator % a == 0) {
-            long result = numerator / a;
+        // if (numerator % a == 0) {
+        // long result = numerator / a;
 
-            if (result >= Integer.MIN_VALUE && result <= Integer.MAX_VALUE) {
-                System.out.println("int");
-            } else {
-                System.out.println("long long");
-            }
-        } else {
-            System.out.println("double");
-        }
-
-        sc.close();
+        // if (result >= Integer.MIN_VALUE && result <= Integer.MAX_VALUE) {
+        // System.out.println("int");
+        // } else {
+        // System.out.println("long long");
+        // }
+        // } else {
+        // System.out.println("double");
+        // }
 
         // long n = sc.nextLong();
         // long m = sc.nextLong();
