@@ -4,21 +4,31 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        long A = sc.nextLong(); // first number
+        long B = sc.nextLong(); // second number
+
+        // Peter Parker's addition (bitwise XOR)
+        long result = A ^ B;
+
+        System.out.println(result);
+
+        sc.close();
+
         // Given two numbers a and b. You have to answer with "YES" if there is a
         // non-empty interval consisting of numbers from lto r(l,l+1,l+2,...,r) with a
         // odd numbers and b even numbers, or "NO" otherwise.
 
-        int a = sc.nextInt();
-        int b = sc.nextInt();
+        // int a = sc.nextInt();
+        // int b = sc.nextInt();
 
-        if (a + b == 0) {
-            System.out.println("NO");
-        } else if (Math.abs(a - b) <= 1) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
-        }
-        sc.close();
+        // if (a + b == 0) {
+        // System.out.println("NO");
+        // } else if (Math.abs(a - b) <= 1) {
+        // System.out.println("YES");
+        // } else {
+        // System.out.println("NO");
+        // }
 
         // alibaba and puzzle.
 
