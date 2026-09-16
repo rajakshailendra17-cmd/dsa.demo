@@ -4,29 +4,51 @@ import java.util.Scanner;
 public class dsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Given three numbers n, k and a. Identify whether the data type of n×ka is
+        // int, long long or double.
 
         long n = sc.nextLong();
-        long m = sc.nextLong();
         long k = sc.nextLong();
+        long a = sc.nextLong();
 
-        long res2 = 0;
+        long numerator = n * k;
 
-        long n2 = n, m2 = m, k2 = k;
+        if (numerator % a == 0) {
+            long result = numerator / a;
 
-        long comboA = Math.min(Math.min(n2, m2), k2);
-        res2 += comboA;
-        n2 -= comboA;
-        m2 -= comboA;
-        k2 -= comboA;
-        long comboB = Math.min(Math.min(n2 / 2, m2), k2);
-        res2 += comboB;
-        n2 -= comboB * 2;
-        m2 -= comboB;
-        k2 -= comboB;
-        long comboC = Math.min(n2 / 2, k2);
-        res2 += comboC;
+            if (result >= Integer.MIN_VALUE && result <= Integer.MAX_VALUE) {
+                System.out.println("int");
+            } else {
+                System.out.println("long long");
+            }
+        } else {
+            System.out.println("double");
+        }
 
-        System.out.println(res2);
+        sc.close();
+
+        // long n = sc.nextLong();
+        // long m = sc.nextLong();
+        // long k = sc.nextLong();
+
+        // long res2 = 0;
+
+        // long n2 = n, m2 = m, k2 = k;
+
+        // long comboA = Math.min(Math.min(n2, m2), k2);
+        // res2 += comboA;
+        // n2 -= comboA;
+        // m2 -= comboA;
+        // k2 -= comboA;
+        // long comboB = Math.min(Math.min(n2 / 2, m2), k2);
+        // res2 += comboB;
+        // n2 -= comboB * 2;
+        // m2 -= comboB;
+        // k2 -= comboB;
+        // long comboC = Math.min(n2 / 2, k2);
+        // res2 += comboC;
+
+        // System.out.println(res2);
 
         sc.close();
 
