@@ -3,22 +3,43 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
      Scanner sc = new Scanner(System.in);
+     // Given a number N, and N numbers, find maximum number in these N numbers.
+
+     int N = sc.nextInt();
+     int[] arr = new int[N];
+     for(int i=0;i<N;i++){
+        arr[i] = sc.nextInt();
+        
+     }
+     int max = arr[0];
+     for(int i=0;i<N;i++){
+        if(arr[i]>max){
+            max = arr[i];
+            
+        }
+     }
+     System.out.println(max);
+     sc.close();
+     
+        
+     
+
+
      // Given multiple lines each line contains a number X which is a password. Print "Wrong" if the password is incorrect otherwise, print "Correct" and terminate the program.
      //Note: The "Correct" password is the number 1999
      
-     while(sc.hasNextInt()){
-       int X = sc.nextInt();
-        if(X==1999){
-            System.out.println("Correct");
-            break;
-        }
-        else{
-            System.out.println("Wrong");
-        } 
+    //  while(sc.hasNextInt()){
+    //    int X = sc.nextInt();
+    //     if(X==1999){
+    //         System.out.println("Correct");
+    //         break;
+    //     }
+    //     else{
+    //         System.out.println("Wrong");
+    //     } 
         
-    }
+    // }
 
-     sc.close();
 
      // Given N numbers. Count how many of these values are even, odd, positive and negative.
     //  int N = sc.nextInt();
