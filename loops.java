@@ -3,19 +3,44 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
      Scanner sc = new Scanner(System.in);
-     // Given a number N. Print the factorial of number N.InputFirst line contains a number T (1 ≤ T ≤ 15) number of test cases.Next T lines will contain a number N (0 ≤ N ≤ 20).
-     int T = sc.nextInt();
-     for(int i=0;i<T;i++){
-        int N = sc.nextInt();
-        long fact = 1;
-        for(int j = 1;j<=N;j++){
-            fact =
-               fact*j;
+     // Given a number X. Determine if the number is prime or not.
+    
+        int X = sc.nextInt();
+        int prime = 1;
+
+        if (X <= 1) {
+            prime = 0; 
+        } else {
+            for (int i = 2; i * i <= X; i++) {
+                if (X % i == 0) {
+                    prime = 0;
+                    break;
+                }
+            }
         }
-        System.out.println(fact);
+
+        if (prime==1) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+
+        sc.close();
+    
+
+
+     // Given a number N. Print the factorial of number N.InputFirst line contains a number T (1 ≤ T ≤ 15) number of test cases.Next T lines will contain a number N (0 ≤ N ≤ 20).
+    //  int T = sc.nextInt();
+    //  for(int i=0;i<T;i++){
+    //     int N = sc.nextInt();
+    //     long fact = 1;
+    //     for(int j = 1;j<=N;j++){
+    //         fact =
+    //            fact*j;
+    //     }
+    //     System.out.println(fact);
         
-     }
-     sc.close();
+     //}
 
      // Given a number N. Print the maltiplication table of the number from 1 to 12.
     //   int N = sc.nextInt();
