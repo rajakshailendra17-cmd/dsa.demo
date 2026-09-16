@@ -3,22 +3,30 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
      Scanner sc = new Scanner(System.in);
+     // Given a number N. Print the maltiplication table of the number from 1 to 12.
+      int N = sc.nextInt();
+      for(int i=1;i<=12;i++){
+        System.out.println(N+" "+"*"+" "+i+" "+"="+" "+N*i);
+        
+      }
+
+
      // Given a number N, and N numbers, find maximum number in these N numbers.
 
-     int N = sc.nextInt();
-     int[] arr = new int[N];
-     for(int i=0;i<N;i++){
-        arr[i] = sc.nextInt();
+    //  int N = sc.nextInt();
+    //  int[] arr = new int[N];
+    //  for(int i=0;i<N;i++){
+    //     arr[i] = sc.nextInt();
         
-     }
-     int max = arr[0];
-     for(int i=0;i<N;i++){
-        if(arr[i]>max){
-            max = arr[i];
+    //  }
+    //  int max = arr[0];
+    //  for(int i=0;i<N;i++){
+    //     if(arr[i]>max){
+    //         max = arr[i];
             
-        }
-     }
-     System.out.println(max);
+    //     }
+    //  }
+    //  System.out.println(max);
      sc.close();
      
         
