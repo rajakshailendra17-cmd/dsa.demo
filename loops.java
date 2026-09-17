@@ -3,19 +3,47 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given two numbers A and B. Print the greatest common divisor between (A, B).
+
         int A = sc.nextInt();
         int B = sc.nextInt();
-        int gcd = 1;
-        int max_gcd = 0;
-        for (int i = 1; i <= Math.min(A, B); i++) {
-            if (A % i == 0 && B % i == 0) {
-                gcd = i;
+        boolean found = false;
+        for (int num = A; num <= B; num++) {
+            int temp = num;
+            boolean isLucky = true;
+            while (temp > 0) {
+                int digit = temp % 10;
+                if (digit != 4 && digit != 7) {
+                    isLucky = false;
+                    break;
+                }
+                temp /= 10;
             }
-            max_gcd = Math.max(max_gcd, gcd);
 
+            if (isLucky) {
+                System.out.print(num + " ");
+                found = true;
+            }
         }
-        System.out.println(max_gcd);
+
+        if (!found) {
+            System.out.println(-1);
+        }
+
+        sc.close();
+
+        // Given two numbers A and B. Print the greatest common divisor between (A, B).
+        // int A = sc.nextInt();
+        // int B = sc.nextInt();
+        // int gcd = 1;
+        // int max_gcd = 0;
+        // for (int i = 1; i <= Math.min(A, B); i++) {
+        // if (A % i == 0 && B % i == 0) {
+        // gcd = i;
+        // }
+        // max_gcd = Math.max(max_gcd, gcd);
+
+        // }
+        // System.out.println(max_gcd);
         sc.close();
 
         // Given a number N. Print all the divisors of N in ascending order.
