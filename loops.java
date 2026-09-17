@@ -3,24 +3,41 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // check pallindrom
+        // print all prime number from 1 to N.
         int N = sc.nextInt();
-        int original = N;
-        int reversed = 0;
 
-        while (N > 0) {
-            int digit = N % 10;
-            reversed = reversed * 10 + digit;
-            N = N / 10;
-        }
-        System.out.println(reversed);
-        if (original == reversed) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
-        }
+        for (int num = 2; num <= N; num++) {
+            boolean isPrime = true;
 
+            for (int i = 2; i <= num / 2; i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.print(num + " ");
+            }
+        }
         sc.close();
+
+        // check pallindrom
+        // int N = sc.nextInt();
+        // int original = N;
+        // int reversed = 0;
+
+        // while (N > 0) {
+        // int digit = N % 10;
+        // reversed = reversed * 10 + digit;
+        // N = N / 10;
+        // }
+        // System.out.println(reversed);
+        // if (original == reversed) {
+        // System.out.println("YES");
+        // } else {
+        // System.out.println("NO");
+        // }
 
         // Given a number X. Determine if the number is prime or not.
 
