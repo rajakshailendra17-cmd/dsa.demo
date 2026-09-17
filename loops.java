@@ -3,16 +3,30 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a number N. Print all the divisors of N in ascending order.
-        int N = sc.nextInt();
-        for (int i = 1; i <= N; i++) {
-            if (N % i == 0) {
-                System.out.println(i);
-
+        // Given two numbers A and B. Print the greatest common divisor between (A, B).
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        int gcd = 1;
+        int max_gcd = 0;
+        for (int i = 1; i <= Math.min(A, B); i++) {
+            if (A % i == 0 && B % i == 0) {
+                gcd = i;
             }
+            max_gcd = Math.max(max_gcd, gcd);
 
         }
+        System.out.println(max_gcd);
         sc.close();
+
+        // Given a number N. Print all the divisors of N in ascending order.
+        // int N = sc.nextInt();
+        // for (int i = 1; i <= N; i++) {
+        // if (N % i == 0) {
+        // System.out.println(i);
+
+        // }
+
+        // }
 
         // print all prime number from 1 to N.
         // int N = sc.nextInt();
