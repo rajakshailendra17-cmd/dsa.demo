@@ -3,19 +3,31 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // For each number Xi in the N numbers print a new line that contains the symbol
-        // repeated Xi time.
-        char S = sc.next().charAt(0);
+        // Given a number N. Print a left angled triangle that has N rows
+        // with the symbol *.
         int N = sc.nextInt();
-        int[] arr = new int[N];
-        for (int i = 0; i <= N - 1; i++) {
-            arr[i] = sc.nextInt();
-            for (int j = 0; j < arr[i]; j++)
-                System.out.print(S);
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+
+            }
             System.out.println();
 
         }
         sc.close();
+
+        // For each number Xi in the N numbers print a new line that contains the symbol
+        // repeated Xi time.
+        // char S = sc.next().charAt(0);
+        // int N = sc.nextInt();
+        // int[] arr = new int[N];
+        // for (int i = 0; i <= N - 1; i++) {
+        // arr[i] = sc.nextInt();
+        // for (int j = 0; j < arr[i]; j++)
+        // System.out.print(S);
+        // System.out.println();
+
+        // }
 
         // int A = sc.nextInt();
         // int B = sc.nextInt();
