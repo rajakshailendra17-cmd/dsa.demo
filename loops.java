@@ -3,33 +3,44 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // For each number Xi in the N numbers print a new line that contains the symbol
+        // repeated Xi time.
+        char S = sc.next().charAt(0);
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+        for (int i = 0; i <= N - 1; i++) {
+            arr[i] = sc.nextInt();
+            for (int j = 0; j < arr[i]; j++)
+                System.out.print(S);
+            System.out.println();
 
-        int A = sc.nextInt();
-        int B = sc.nextInt();
-        boolean found = false;
-        for (int num = A; num <= B; num++) {
-            int temp = num;
-            boolean isLucky = true;
-            while (temp > 0) {
-                int digit = temp % 10;
-                if (digit != 4 && digit != 7) {
-                    isLucky = false;
-                    break;
-                }
-                temp /= 10;
-            }
-
-            if (isLucky) {
-                System.out.print(num + " ");
-                found = true;
-            }
         }
-
-        if (!found) {
-            System.out.println(-1);
-        }
-
         sc.close();
+
+        // int A = sc.nextInt();
+        // int B = sc.nextInt();
+        // boolean found = false;
+        // for (int num = A; num <= B; num++) {
+        // int temp = num;
+        // boolean isLucky = true;
+        // while (temp > 0) {
+        // int digit = temp % 10;
+        // if (digit != 4 && digit != 7) {
+        // isLucky = false;
+        // break;
+        // }
+        // temp /= 10;
+        // }
+
+        // if (isLucky) {
+        // System.out.print(num + " ");
+        // found = true;
+        // }
+        // }
+
+        // if (!found) {
+        // System.out.println(-1);
+        // }
 
         // Given two numbers A and B. Print the greatest common divisor between (A, B).
         // int A = sc.nextInt();
