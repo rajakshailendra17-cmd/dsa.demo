@@ -3,10 +3,9 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a number N. Print a left angled triangle that has N rows
-        // with the symbol *.
+        // Given a number N. Print a face down right angled triangle that has N rows.
         int N = sc.nextInt();
-        for (int i = 1; i <= N; i++) {
+        for (int i = N; i >= 1; i--) {
             for (int j = 1; j <= i; j++) {
                 System.out.print("*");
 
@@ -15,6 +14,18 @@ public class loops {
 
         }
         sc.close();
+
+        // Given a number N. Print a left angled triangle that has N rows
+        // with the symbol *.
+        // int N = sc.nextInt();
+        // for (int i = 1; i <= N; i++) {
+        // for (int j = 1; j <= i; j++) {
+        // System.out.print("*");
+
+        // }
+        // System.out.println();
+
+        // }
 
         // For each number Xi in the N numbers print a new line that contains the symbol
         // repeated Xi time.
