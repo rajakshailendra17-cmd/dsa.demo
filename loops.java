@@ -3,24 +3,34 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // print all prime number from 1 to N.
+        // Given a number N. Print all the divisors of N in ascending order.
         int N = sc.nextInt();
+        for (int i = 1; i <= N; i++) {
+            if (N % i == 0) {
+                System.out.println(i);
 
-        for (int num = 2; num <= N; num++) {
-            boolean isPrime = true;
-
-            for (int i = 2; i <= num / 2; i++) {
-                if (num % i == 0) {
-                    isPrime = false;
-                    break;
-                }
             }
 
-            if (isPrime) {
-                System.out.print(num + " ");
-            }
         }
         sc.close();
+
+        // print all prime number from 1 to N.
+        // int N = sc.nextInt();
+
+        // for (int num = 2; num <= N; num++) {
+        // boolean isPrime = true;
+
+        // for (int i = 2; i <= num / 2; i++) {
+        // if (num % i == 0) {
+        // isPrime = false;
+        // break;
+        // }
+        // }
+
+        // if (isPrime) {
+        // System.out.print(num + " ");
+        // }
+        // }
 
         // check pallindrom
         // int N = sc.nextInt();
