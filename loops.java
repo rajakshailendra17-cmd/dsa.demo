@@ -3,23 +3,40 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        while (true) {
-            int N = sc.nextInt();
-            int M = sc.nextInt();
-            if (N <= 0 || M <= 0) {
-                break;
-            }
-            int start = Math.min(N, M);
-            int end = Math.max(N, M);
-
+        // Given two numbers X and Y. Print the sum of all odd numbers between them,
+        // excluding X and Y.
+        int T = sc.nextInt();
+        for (int i = 0; i < T; i++) {
+            int X = sc.nextInt();
+            int Y = sc.nextInt();
             int sum = 0;
-            for (int i = start; i <= end; i++) {
-                System.out.print(i + " ");
-                sum += i;
+            int start = Math.min(X, Y);
+            int end = Math.max(X, Y);
+            for (int j = start + 1; j < end; j++) {
+                if (j % 2 != 0)
+                    sum += j;
             }
-            System.out.println("sum =" + sum);
+            System.out.println(sum);
+
         }
+        sc.close();
+
+        // while (true) {
+        // int N = sc.nextInt();
+        // int M = sc.nextInt();
+        // if (N <= 0 || M <= 0) {
+        // break;
+        // }
+        // int start = Math.min(N, M);
+        // int end = Math.max(N, M);
+
+        // int sum = 0;
+        // for (int i = start; i <= end; i++) {
+        // System.out.print(i + " ");
+        // sum += i;
+        // }
+        // System.out.println("sum =" + sum);
+        // }
         sc.close();
 
         // Given a number N. Print the digits of that number from right to left
