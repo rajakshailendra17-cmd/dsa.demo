@@ -3,23 +3,35 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given two numbers X and Y. Print the sum of all odd numbers between them,
-        // excluding X and Y.
-        int T = sc.nextInt();
-        for (int i = 0; i < T; i++) {
-            int X = sc.nextInt();
-            int Y = sc.nextInt();
-            int sum = 0;
-            int start = Math.min(X, Y);
-            int end = Math.max(X, Y);
-            for (int j = start + 1; j < end; j++) {
-                if (j % 2 != 0)
-                    sum += j;
+        // Given a number N. Print a pyramid that has N rows.
+        int N = sc.nextInt();
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N - i; j++) {
+                System.out.print(" ");
             }
-            System.out.println(sum);
-
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
         sc.close();
+
+        // Given two numbers X and Y. Print the sum of all odd numbers between them,
+        // excluding X and Y.
+        // int T = sc.nextInt();
+        // for (int i = 0; i < T; i++) {
+        // int X = sc.nextInt();
+        // int Y = sc.nextInt();
+        // int sum = 0;
+        // int start = Math.min(X, Y);
+        // int end = Math.max(X, Y);
+        // for (int j = start + 1; j < end; j++) {
+        // if (j % 2 != 0)
+        // sum += j;
+        // }
+        // System.out.println(sum);
+
+        // }
 
         // while (true) {
         // int N = sc.nextInt();
