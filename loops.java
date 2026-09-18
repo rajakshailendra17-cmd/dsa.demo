@@ -3,20 +3,38 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a number N. Print the digits of that number from right to left
-        // separated by space, take T input as a testcase.
-        int T = sc.nextInt();
-        for (int i = 0; i < T; i++) {
-            int N = sc.nextInt();
-            do {
-                int digit = N % 10;
-                System.out.print(digit + " ");
-                N = N / 10;
-            } while (N != 0);
-            System.out.println();
 
+        while (true) {
+            int N = sc.nextInt();
+            int M = sc.nextInt();
+            if (N <= 0 || M <= 0) {
+                break;
+            }
+            int start = Math.min(N, M);
+            int end = Math.max(N, M);
+
+            int sum = 0;
+            for (int i = start; i <= end; i++) {
+                System.out.print(i + " ");
+                sum += i;
+            }
+            System.out.println("sum =" + sum);
         }
         sc.close();
+
+        // Given a number N. Print the digits of that number from right to left
+        // separated by space, take T input as a testcase.
+        // int T = sc.nextInt();
+        // for (int i = 0; i < T; i++) {
+        // int N = sc.nextInt();
+        // do {
+        // int digit = N % 10;
+        // System.out.print(digit + " ");
+        // N = N / 10;
+        // } while (N != 0);
+        // System.out.println();
+
+        // }
 
         // Given a number N. Print a face down right angled triangle that has N rows.
         // int N = sc.nextInt();
