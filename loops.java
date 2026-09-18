@@ -3,17 +3,31 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a number N. Print a face down right angled triangle that has N rows.
-        int N = sc.nextInt();
-        for (int i = N; i >= 1; i--) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print("*");
-
-            }
+        // Given a number N. Print the digits of that number from right to left
+        // separated by space, take T input as a testcase.
+        int T = sc.nextInt();
+        for (int i = 0; i < T; i++) {
+            int N = sc.nextInt();
+            do {
+                int digit = N % 10;
+                System.out.print(digit + " ");
+                N = N / 10;
+            } while (N != 0);
             System.out.println();
 
         }
         sc.close();
+
+        // Given a number N. Print a face down right angled triangle that has N rows.
+        // int N = sc.nextInt();
+        // for (int i = N; i >= 1; i--) {
+        // for (int j = 1; j <= i; j++) {
+        // System.out.print("*");
+
+        // }
+        // System.out.println();
+
+        // }
 
         // Given a number N. Print a left angled triangle that has N rows
         // with the symbol *.
