@@ -3,21 +3,38 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a number N. Print a diamond that has 2N rows.using * sign.
-        int N = sc.nextInt();
-        for (int i = 1; i <= N; i++) {
-            String spaces = " ".repeat(N - i);
-            String stars = "*".repeat(2 * i - 1);
-            System.out.println(spaces + stars);
+        int T = sc.nextInt();
+        for (int t = 0; t < T; t++) {
+            int N = sc.nextInt();
+            int onesCount = 0;
+            int temp = N;
+            while (temp > 0) {
+                if (temp % 2 == 1) {
+                    onesCount++;
+                }
+                temp = temp / 2;
+            }
+            int result = 0;
+            for (int i = 0; i < onesCount; i++) {
+                result = result + (int) Math.pow(2, i) * 1;
+            }
+            System.out.println(result);
         }
-
-        for (int i = N; i >= 1; i--) {
-            String spaces = " ".repeat(N - i);
-            String stars = "*".repeat(2 * i - 1);
-            System.out.println(spaces + stars);
-        }
-
         sc.close();
+
+        // Given a number N. Print a diamond that has 2N rows.using * sign.
+        // int N = sc.nextInt();
+        // for (int i = 1; i <= N; i++) {
+        // String spaces = " ".repeat(N - i);
+        // String stars = "*".repeat(2 * i - 1);
+        // System.out.println(spaces + stars);
+        // }
+
+        // for (int i = N; i >= 1; i--) {
+        // String spaces = " ".repeat(N - i);
+        // String stars = "*".repeat(2 * i - 1);
+        // System.out.println(spaces + stars);
+        // }
 
         // Given a number N. Print N lines that describes PUM game.
         // int N = sc.nextInt();
