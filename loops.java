@@ -3,24 +3,35 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
-        for (int t = 0; t < T; t++) {
-            int N = sc.nextInt();
-            int onesCount = 0;
-            int temp = N;
-            while (temp > 0) {
-                if (temp % 2 == 1) {
-                    onesCount++;
-                }
-                temp = temp / 2;
-            }
-            int result = 0;
-            for (int i = 0; i < onesCount; i++) {
-                result = result + (int) Math.pow(2, i) * 1;
-            }
-            System.out.println(result);
+        // Given a number N. Print first N numbers of the Fibonacci sequence.
+        int N = sc.nextInt();
+        int a = 0;
+        int b = 1;
+        for (int i = 0; i < N; i++) {
+            System.out.print(a + " ");
+            int c = a + b;
+            a = b;
+            b = c;
         }
         sc.close();
+
+        // int T = sc.nextInt();
+        // for (int t = 0; t < T; t++) {
+        // int N = sc.nextInt();
+        // int onesCount = 0;
+        // int temp = N;
+        // while (temp > 0) {
+        // if (temp % 2 == 1) {
+        // onesCount++;
+        // }
+        // temp = temp / 2;
+        // }
+        // int result = 0;
+        // for (int i = 0; i < onesCount; i++) {
+        // result = result + (int) Math.pow(2, i) * 1;
+        // }
+        // System.out.println(result);
+        // }
 
         // Given a number N. Print a diamond that has 2N rows.using * sign.
         // int N = sc.nextInt();
