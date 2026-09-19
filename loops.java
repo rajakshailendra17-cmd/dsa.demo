@@ -8,17 +8,21 @@ public class loops {
         int N = sc.nextInt();
         int A = sc.nextInt();
         int B = sc.nextInt();
+        long total = 0;
+
         for (int i = 1; i <= N; i++) {
             int sum = 0;
-            while (i > 0) {
-                int digit = i % 10;
-                sum += digit;
-                i /= 10;
-                if (sum >= A && sum <= B)
-                    System.out.print(sum + " ");
-
+            int x = i;
+            while (x > 0) {
+                sum += x % 10;
+                x /= 10;
+            }
+            if (sum >= A && sum <= B) {
+                total += i;
             }
         }
+
+        System.out.println(total);
         sc.close();
 
         // Given a number N. Print a pyramid that has N rows.
@@ -32,7 +36,6 @@ public class loops {
         // }
         // System.out.println();
         // }
-        sc.close();
 
         // Given two numbers X and Y. Print the sum of all odd numbers between them,
         // excluding X and Y.
