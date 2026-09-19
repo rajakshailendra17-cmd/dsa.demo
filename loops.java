@@ -3,17 +3,35 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a number N. Print a pyramid that has N rows.
+        // Given three numbers N, A, B. Print the summation of the numbers between 1 and
+        // N whose sum of digits is between A and B inclusive.
         int N = sc.nextInt();
+        int A = sc.nextInt();
+        int B = sc.nextInt();
         for (int i = 1; i <= N; i++) {
-            for (int j = 1; j <= N - i; j++) {
-                System.out.print(" ");
+            int sum = 0;
+            while (i > 0) {
+                int digit = i % 10;
+                sum += digit;
+                i /= 10;
+                if (sum >= A && sum <= B)
+                    System.out.print(sum + " ");
+
             }
-            for (int j = 1; j <= 2 * i - 1; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
         }
+        sc.close();
+
+        // Given a number N. Print a pyramid that has N rows.
+        // int N = sc.nextInt();
+        // for (int i = 1; i <= N; i++) {
+        // for (int j = 1; j <= N - i; j++) {
+        // System.out.print(" ");
+        // }
+        // for (int j = 1; j <= 2 * i - 1; j++) {
+        // System.out.print("*");
+        // }
+        // System.out.println();
+        // }
         sc.close();
 
         // Given two numbers X and Y. Print the sum of all odd numbers between them,
