@@ -3,23 +3,43 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        for (int i = 0; i < N; i++)
-            System.out.print(fibo(i) + " ");
+        // Given two numbers K and S. Determine how many different values of X,Yand
+        // Zsuch that (0≤X,Y,Z≤K)and X+Y+Z=S.
+        int K = sc.nextInt();
+        int S = sc.nextInt();
 
-        System.out.println();
+        int count = 0;
+        for (int X = 0; X <= K; X++) {
+            for (int Y = 0; Y <= K; Y++) {
+                int Z = S - (X + Y);
+                if (Z >= 0 && Z <= K) {
+                    count++;
+                }
+            }
+        }
 
+        System.out.println(count);
         sc.close();
     }
-
-    public static int fibo(int N) {
-        if (N == 0)
-            return 0;
-        if (N == 1)
-            return 1;
-        return fibo(N - 1) + fibo(N - 2);
-    }
 }
+
+// int N = sc.nextInt();
+// for (int i = 0; i < N; i++)
+// System.out.print(fibo(i) + " ");
+
+// System.out.println();
+
+// sc.close();
+// }
+
+// public static int fibo(int N) {
+// if (N == 0)
+// return 0;
+// if (N == 1)
+// return 1;
+// return fibo(N - 1) + fibo(N - 2);
+// }
+// }
 
 // Given a number N. Print first N numbers of the Fibonacci sequence.
 // int N = sc.nextInt();
