@@ -3,27 +3,38 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Given a number N. Print N lines that describes PUM game.
+        int N = sc.nextInt();
+        int num = 1;
+        for (int i = 1; i <= N; i++) {
+            System.out.print(num + " ");
+            System.out.print((num + 1) + " ");
+            System.out.print((num + 2) + " ");
+            System.out.println("PUM");
+            num = num + 4;
+        }
+        sc.close();
+
         // Given three numbers N, A, B. Print the summation of the numbers between 1 and
         // N whose sum of digits is between A and B inclusive.
-        int N = sc.nextInt();
-        int A = sc.nextInt();
-        int B = sc.nextInt();
-        long total = 0;
+        // int N = sc.nextInt();
+        // int A = sc.nextInt();
+        // int B = sc.nextInt();
+        // long total = 0;
 
-        for (int i = 1; i <= N; i++) {
-            int sum = 0;
-            int x = i;
-            while (x > 0) {
-                sum += x % 10;
-                x /= 10;
-            }
-            if (sum >= A && sum <= B) {
-                total += i;
-            }
-        }
+        // for (int i = 1; i <= N; i++) {
+        // int sum = 0;
+        // int x = i;
+        // while (x > 0) {
+        // sum += x % 10;
+        // x /= 10;
+        // }
+        // if (sum >= A && sum <= B) {
+        // total += i;
+        // }
+        // }
 
-        System.out.println(total);
-        sc.close();
+        // System.out.println(total);
 
         // Given a number N. Print a pyramid that has N rows.
         // int N = sc.nextInt();
