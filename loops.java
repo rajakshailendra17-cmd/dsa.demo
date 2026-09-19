@@ -3,17 +3,32 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a number N. Print N lines that describes PUM game.
+        // Given a number N. Print a diamond that has 2N rows.using * sign.
         int N = sc.nextInt();
-        int num = 1;
         for (int i = 1; i <= N; i++) {
-            System.out.print(num + " ");
-            System.out.print((num + 1) + " ");
-            System.out.print((num + 2) + " ");
-            System.out.println("PUM");
-            num = num + 4;
+            String spaces = " ".repeat(N - i);
+            String stars = "*".repeat(2 * i - 1);
+            System.out.println(spaces + stars);
         }
+
+        for (int i = N; i >= 1; i--) {
+            String spaces = " ".repeat(N - i);
+            String stars = "*".repeat(2 * i - 1);
+            System.out.println(spaces + stars);
+        }
+
         sc.close();
+
+        // Given a number N. Print N lines that describes PUM game.
+        // int N = sc.nextInt();
+        // int num = 1;
+        // for (int i = 1; i <= N; i++) {
+        // System.out.print(num + " ");
+        // System.out.print((num + 1) + " ");
+        // System.out.print((num + 2) + " ");
+        // System.out.println("PUM");
+        // num = num + 4;
+        // }
 
         // Given three numbers N, A, B. Print the summation of the numbers between 1 and
         // N whose sum of digits is between A and B inclusive.
