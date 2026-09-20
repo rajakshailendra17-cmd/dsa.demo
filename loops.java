@@ -3,25 +3,38 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given two numbers K and S. Determine how many different values of X,Yand
-        // Zsuch that (0≤X,Y,Z≤K)and X+Y+Z=S.
-        int K = sc.nextInt();
-        int S = sc.nextInt();
-
-        int count = 0;
-        for (int X = 0; X <= K; X++) {
-            for (int Y = 0; Y <= K; Y++) {
-                int Z = S - (X + Y);
-                if (Z >= 0 && Z <= K) {
-                    count++;
-                }
-            }
+        // timon and pumbaa.
+        long a = sc.nextLong();
+        long b = sc.nextLong();
+        long c = a - b;
+        if (c < 0) {
+            System.out.println("0");
+        } else {
+            System.out.println(c);
         }
-
-        System.out.println(count);
         sc.close();
     }
 }
+
+// Given two numbers K and S. Determine how many different values of X,Yand
+// Zsuch that (0≤X,Y,Z≤K)and X+Y+Z=S.
+// int K = sc.nextInt();
+// int S = sc.nextInt();
+
+// int count = 0;
+// for (int X = 0; X <= K; X++) {
+// for (int Y = 0; Y <= K; Y++) {
+// int Z = S - (X + Y);
+// if (Z >= 0 && Z <= K) {
+// count++;
+// }
+// }
+// }
+
+// System.out.println(count);
+// sc.close();
+// }
+// }
 
 // int N = sc.nextInt();
 // for (int i = 0; i < N; i++)
