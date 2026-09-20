@@ -3,26 +3,48 @@ import java.util.Scanner;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Some day, an artist wanted to draw an X mark on the wall in a fashionable
-        // way.
+        // finding minimums after certain range length given.
         int N = sc.nextInt();
+        int K = sc.nextInt();
+        int[] arr = new int[N];
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                if (i == j && i == N / 2) {
-                    System.out.print("X");
-                } else if (i == j) {
-                    System.out.print("\\");
-                } else if (i + j == N - 1) {
-                    System.out.print("/");
-                } else {
-                    System.out.print("*");
+            arr[i] = sc.nextInt();
+        }
+        for (int i = 0; i < N; i += K) {
+            int min = arr[i];
+            for (int j = i; j < i + K && j < N; j++) {
+                if (arr[j] < min) {
+                    min = arr[j];
                 }
             }
-            System.out.println();
+
+            System.out.print(min + " ");
         }
+
         sc.close();
     }
 }
+
+// Some day, an artist wanted to draw an X mark on the wall in a fashionable
+// way.
+// int N = sc.nextInt();
+// for (int i = 0; i < N; i++) {
+// for (int j = 0; j < N; j++) {
+// if (i == j && i == N / 2) {
+// System.out.print("X");
+// } else if (i == j) {
+// System.out.print("\\");
+// } else if (i + j == N - 1) {
+// System.out.print("/");
+// } else {
+// System.out.print("*");
+// }
+// }
+// System.out.println();
+// }
+// sc.close();
+// }
+// }
 
 // Given two numbers K and S. Determine how many different values of X,Yand
 // Zsuch that (0≤X,Y,Z≤K)and X+Y+Z=S.
