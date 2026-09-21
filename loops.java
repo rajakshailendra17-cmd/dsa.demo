@@ -1,29 +1,68 @@
 import java.util.Scanner;
+import java.math.BigInteger;
 
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // finding minimums after certain range length given.
-        int N = sc.nextInt();
-        int K = sc.nextInt();
-        int[] arr = new int[N];
-        for (int i = 0; i < N; i++) {
-            arr[i] = sc.nextInt();
-        }
-        for (int i = 0; i < N; i += K) {
-            int min = arr[i];
-            for (int j = i; j < i + K && j < N; j++) {
-                if (arr[j] < min) {
-                    min = arr[j];
-                }
-            }
+        // Given the seat number, can you find the corresponding row and column numbers
+        // of the seat?
+        long id = sc.nextLong();
+        long row = id / 4;
+        long col = id % 4;
 
-            System.out.print(min + " ");
+        if (row % 2 == 1) {
+            col = 3 - col;
         }
 
+        System.out.println(row + " " + col);
         sc.close();
     }
 }
+
+// // Range sum.
+// int T = sc.nextInt();
+// StringBuilder sb = new StringBuilder();
+
+// for (int j = 0; j < T; j++) {
+// long L = sc.nextLong();
+// long R = sc.nextLong();
+// BigInteger bigL = BigInteger.valueOf(L);
+// BigInteger bigR = BigInteger.valueOf(R);
+// BigInteger sumR =
+// bigR.multiply(bigR.add(BigInteger.ONE)).divide(BigInteger.valueOf(2));
+// BigInteger sumL =
+// (bigL.subtract(BigInteger.ONE)).multiply(bigL).divide(BigInteger.valueOf(2));
+// BigInteger result = sumR.subtract(sumL);
+
+// sb.append(result).append("\n");
+// }
+
+// System.out.print(sb.toString());
+// sc.close();
+// }
+// }
+
+// finding minimums after certain range length given.
+// int N = sc.nextInt();
+// int K = sc.nextInt();
+// int[] arr = new int[N];
+// for (int i = 0; i < N; i++) {
+// arr[i] = sc.nextInt();
+// }
+// for (int i = 0; i < N; i += K) {
+// int min = arr[i];
+// for (int j = i; j < i + K && j < N; j++) {
+// if (arr[j] < min) {
+// min = arr[j];
+// }
+// }
+
+// System.out.print(min + " ");
+// }
+
+// sc.close();
+// }
+// }
 
 // Some day, an artist wanted to draw an X mark on the wall in a fashionable
 // way.
