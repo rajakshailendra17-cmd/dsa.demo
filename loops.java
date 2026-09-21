@@ -4,20 +4,73 @@ import java.math.BigInteger;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given the seat number, can you find the corresponding row and column numbers
-        // of the seat?
-        long id = sc.nextLong();
-        long row = id / 4;
-        long col = id % 4;
+        // Let's define f(x) as the number of times at which the integer x can be
+        // divided by 2.
+        int N = sc.nextInt();
+        long[] arr = new long[N];
+        for (int i = 0; i < N; i++) {
+            arr[i] = sc.nextLong();
+        }
+        int maxF = 0;
+        for (int i = 0; i < N; i++) {
+            int count = 0;
+            long x = arr[i];
+            while (x % 2 == 0) {
+                count++;
+                x /= 2;
+            }
 
-        if (row % 2 == 1) {
-            col = 3 - col;
+            if (count > maxF) {
+                maxF = count;
+            }
         }
 
-        System.out.println(row + " " + col);
+        System.out.println(maxF);
         sc.close();
     }
 }
+
+// int N = sc.nextInt();
+// StringBuilder sb = new StringBuilder();
+// int[] arr = new int[N];
+// for (int i = 0; i < N; i++) {
+// arr[i] = sc.nextInt();
+// int f = 0;
+// while (arr[i] % 2 == 0
+// && arr[i] != 0) {
+// f++;
+// sb.append(f).append(" ");
+// arr[i] /= 2;
+// }
+// }
+// char maxChar = sb.charAt(0);
+
+// for (int i = 1; i < sb.length(); i++) {
+// char current = sb.charAt(i);
+// if (current > maxChar) {
+// maxChar = current;
+// }
+// }
+// System.out.println(maxChar);
+// sc.close();
+
+// }
+// }
+
+// Given the seat number, can you find the corresponding row and column numbers
+// of the seat?
+// long id = sc.nextLong();
+// long row = id / 4;
+// long col = id % 4;
+
+// if (row % 2 == 1) {
+// col = 3 - col;
+// }
+
+// System.out.println(row + " " + col);
+// sc.close();
+// }
+// }
 
 // // Range sum.
 // int T = sc.nextInt();
