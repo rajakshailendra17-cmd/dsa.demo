@@ -1,34 +1,72 @@
 #include <iostream>
-#include <cmath>
+#include <math.h>
 using namespace std;
-class rectangle
-{
-public:
-    int length, breadth;
-    rectangle()
-    {
-        cout << "hello" << endl;
-    }
 
-    rectangle(int l, int b)
-    {
-        length = l;
-        breadth = b;
-        // cout << "hello" << endl;
-        cout << "lenght=" << length << endl;
-        cout << "breadth=" << breadth << endl;
-    }
-    int area()
-    {
-        return length * breadth;
-    }
-};
 int main()
 {
-    rectangle r(2, 5);
-    rectangle r1;
-    cout << r.area() << endl;
+
+    // int temp = n, rem = 0, bin = 0, i=0;
+    //     while(temp != 0){
+    //         rem = temp % 2;
+    //         bin = (pow(10, i) * rem) + bin;
+    //         i++;
+    //         temp/= 2;
+    //     }
+
+    int bin = 1010;
+    int j = 0;
+    float comp = 0, rem = 0;
+
+    while (bin > 0)
+    {
+        rem = bin % 10;
+        if (rem == 1)
+        {
+            comp = comp;
+        }
+        else if (rem == 0)
+        {
+            comp = comp + (pow(10, j));
+        }
+        bin = bin / 10;
+        j++;
+    }
+
+    cout << comp << endl;
+
+    return 0;
 }
+// #include <iostream>
+//  #include <cmath>
+//  using namespace std;
+//  class rectangle
+//  {
+//  public:
+//      int length, breadth;
+//      rectangle()
+//      {
+//          cout << "hello" << endl;
+//      }
+
+//     rectangle(int l, int b)
+//     {
+//         length = l;
+//         breadth = b;
+//         // cout << "hello" << endl;
+//         cout << "lenght=" << length << endl;
+//         cout << "breadth=" << breadth << endl;
+//     }
+//     int area()
+//     {
+//         return length * breadth;
+//     }
+// };
+// int main()
+// {
+//     rectangle r(2, 5);
+//     rectangle r1;
+//     cout << r.area() << endl;
+// }
 // features of the default contsructor:
 // the name of the constructor should be same as the class name
 //  a constructor do not have any return type

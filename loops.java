@@ -4,31 +4,69 @@ import java.math.BigInteger;
 public class loops {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Let's define f(x) as the number of times at which the integer x can be
-        // divided by 2.
-        int N = sc.nextInt();
-        long[] arr = new long[N];
-        for (int i = 0; i < N; i++) {
-            arr[i] = sc.nextLong();
-        }
-        int maxF = 0;
-        for (int i = 0; i < N; i++) {
-            int count = 0;
-            long x = arr[i];
-            while (x % 2 == 0) {
-                count++;
-                x /= 2;
+        // You are given two integers n and s, and you have to find distinct positive
+        // integers, such that each of them is ≤n, and their summation =s. Otherwise,
+        // state that this is impossible.
+
+        int T = sc.nextInt();
+
+        while (T-- > 0) {
+            int n = sc.nextInt();
+            long s = sc.nextLong();
+
+            long maxSum = (long) n * (n + 1) / 2;
+            if (s > maxSum) {
+                System.out.println(-1);
+                continue;
             }
 
-            if (count > maxF) {
-                maxF = count;
+            long sum = 0;
+            StringBuilder ans = new StringBuilder();
+
+            // take numbers from 1 upwards
+            for (int i = 1; i <= n; i++) {
+                if (sum + i <= s) {
+                    sum += i;
+                    ans.append(i).append(" ");
+                }
+                if (sum == s)
+                    break;
+            }
+
+            if (sum == s) {
+                System.out.println(ans.toString().trim());
+            } else {
+                System.out.println(-1);
             }
         }
-
-        System.out.println(maxF);
-        sc.close();
     }
 }
+
+// Let's define f(x) as the number of times at which the integer x can be
+// divided by 2.
+// int N = sc.nextInt();
+// long[] arr = new long[N];
+// for (int i = 0; i < N; i++) {
+// arr[i] = sc.nextLong();
+// }
+// int maxF = 0;
+// for (int i = 0; i < N; i++) {
+// int count = 0;
+// long x = arr[i];
+// while (x % 2 == 0) {
+// count++;
+// x /= 2;
+// }
+
+// if (count > maxF) {
+// maxF = count;
+// }
+// }
+
+// System.out.println(maxF);
+// sc.close();
+// }
+// }
 
 // int N = sc.nextInt();
 // StringBuilder sb = new StringBuilder();
