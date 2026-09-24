@@ -4,25 +4,41 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a number N and an array A of N numbers. Print the lowest number and its
-        // position.
-        // Note: if there are more than one answer print first one's position.
+        // print array in reverse order.
         int N = sc.nextInt();
         int[] A = new int[N];
         for (int i = 0; i < N; i++) {
             A[i] = sc.nextInt();
+        }
+        int temp = 0;
+        int[] B = new int[N];
+        for (int i = N, j = 0; i <= N - 1 && j > N; i--, j++) {
+            B[j] = A[i];
 
         }
-        int min = A[0];
-        int minIndex = 0;
         for (int i = 0; i < N; i++) {
-            if (A[i] < min) {
-                min = A[i];
-                minIndex = i;
-
-            }
+            System.out.print(A[i] + " ");
         }
-        System.out.println(min + " " + (1 + minIndex));
+
+        // Given a number N and an array A of N numbers. Print the lowest number and its
+        // position.
+        // Note: if there are more than one answer print first one's position.
+        // int N = sc.nextInt();
+        // int[] A = new int[N];
+        // for (int i = 0; i < N; i++) {
+        // A[i] = sc.nextInt();
+
+        // }
+        // int min = A[0];
+        // int minIndex = 0;
+        // for (int i = 0; i < N; i++) {
+        // if (A[i] < min) {
+        // min = A[i];
+        // minIndex = i;
+
+        // }
+        // }
+        // System.out.println(min + " " + (1 + minIndex));
 
         // int T = sc.nextInt();
         // while (T >0) {
