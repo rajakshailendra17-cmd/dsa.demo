@@ -4,26 +4,51 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // find contiguous subarray with maximum number in that subarray.
-        int T = sc.nextInt();
+        // Replace minmax.
+        int N = sc.nextInt();
+        int[] A = new int[N];
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        int index1 = 0;
+        int index2 = 0;
+        for (int i = 0; i < N; i++) {
+            A[i] = sc.nextInt();
+            if (A[i] > max) {
+                max = A[i];
+                index1 = i;
 
-        while (T-- > 0) {
-            int N = sc.nextInt();
-            int[] A = new int[N];
-            for (int i = 0; i < N; i++) {
-                A[i] = sc.nextInt();
             }
-            for (int i = 0; i < N; i++) {
-                int max = A[i];
-                for (int j = i; j < N; j++) {
-                    if (A[j] > max) {
-                        max = A[j];
-                    }
-                    System.out.print(max + " ");
-                }
+            if (A[i] < min) {
+                min = A[i];
+                index2 = i;
+
             }
-            System.out.println();
         }
+        A[index1] = A[index2];
+        A[index2] = max;
+        for (int i = 0; i < N; i++) {
+            System.out.print(A[i] + " ");
+        }
+        // find contiguous subarray with maximum number in that subarray.
+        // int T = sc.nextInt();
+
+        // while (T-- > 0) {
+        // int N = sc.nextInt();
+        // int[] A = new int[N];
+        // for (int i = 0; i < N; i++) {
+        // A[i] = sc.nextInt();
+        // }
+        // for (int i = 0; i < N; i++) {
+        // int max = A[i];
+        // for (int j = i; j < N; j++) {
+        // if (A[j] > max) {
+        // max = A[j];
+        // }
+        // System.out.print(max + " ");
+        // }
+        // }
+        // System.out.println();
+        // }
 
         // Given a number N and an array A of N digits (not separated by space). Print
         // the summation of these digits.
