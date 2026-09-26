@@ -4,26 +4,53 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // sorting using bubble sort.
-        int N = sc.nextInt();
-        int[] A = new int[N];
+        // Given a number N and an array A of N numbers. Print the smallest possible
+        // result of Ai + Aj + j - i , where 1 ≤ i < j ≤ N.
+        int T = sc.nextInt();
+        for (int i = 0; i < T; i++) {
+            int N = sc.nextInt();
+            int[] A = new int[N];
+            for (int j = 0; j < N; j++) {
+                A[j] = sc.nextInt();
 
-        for (int i = 0; i < N; i++) {
-            A[i] = sc.nextInt();
-        }
-        for (int i = 0; i < N - 1; i++) {
-            for (int j = 0; j < N - 1 - i; j++) {
-                if (A[j] > A[j + 1]) {
-                    int temp = A[j];
-                    A[j] = A[j + 1];
-                    A[j + 1] = temp;
+            }
+            int min = Integer.MAX_VALUE;
+            for (int j = 1; j <= N; j++) {
+                for (int k = j + 1; k <= N; k++) {
+                    if (j != k) {
+                        int sum = A[j - 1] + A[k - 1];
+                        int diff = k - j;
+                        int result = sum + diff;
+                        if (result < min) {
+                            min = result;
+
+                        }
+                    }
                 }
             }
+            System.out.println(min);
         }
 
-        for (int i = 0; i < N; i++) {
-            System.out.print(A[i] + " ");
-        }
+        // sorting using bubble sort.
+        // int N = sc.nextInt();
+        // int[] A = new int[N];
+
+        // for (int i = 0; i < N; i++) {
+        // A[i] = sc.nextInt();
+        // }
+        // for (int i = 0; i < N - 1; i++) {
+        // for (int j = 0; j < N - 1 - i; j++) {
+        // if (A[j] > A[j + 1]) {
+        // int temp = A[j];
+        // A[j] = A[j + 1];
+        // A[j + 1] = temp;
+        // }
+        // }
+        // }
+
+        // for (int i = 0; i < N; i++) {
+        // System.out.print(A[i] + " ");
+        // }
 
         // int N = sc.nextInt();
         // int[] A = new int[N];
