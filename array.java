@@ -4,30 +4,44 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Given a number N and an array A of N digits (not separated by space). Print
+        // the summation of these digits.
         int N = sc.nextInt();
+        String digits = sc.next();
         int[] A = new int[N];
         for (int i = 0; i < N; i++) {
-            A[i] = sc.nextInt();
-
+            A[i] = digits.charAt(i) - '0';
         }
-        int min = Integer.MAX_VALUE;
+        int sum = 0;
         for (int i = 0; i < N; i++) {
-            if (A[i] < min) {
-                min = A[i];
-            }
+            sum += A[i];
+        }
+        System.out.println(sum);
 
-        }
-        int count = 0;
-        for (int i = 0; i < N; i++) {
-            if (min == A[i]) {
-                count++;
-            }
-        }
-        if (count % 2 != 0) {
-            System.out.println("Lucky");
-        } else {
-            System.out.println("Unlucky");
-        }
+        // int N = sc.nextInt();
+        // int[] A = new int[N];
+        // for (int i = 0; i < N; i++) {
+        // A[i] = sc.nextInt();
+
+        // }
+        // int min = Integer.MAX_VALUE;
+        // for (int i = 0; i < N; i++) {
+        // if (A[i] < min) {
+        // min = A[i];
+        // }
+
+        // }
+        // int count = 0;
+        // for (int i = 0; i < N; i++) {
+        // if (min == A[i]) {
+        // count++;
+        // }
+        // }
+        // if (count % 2 != 0) {
+        // System.out.println("Lucky");
+        // } else {
+        // System.out.println("Unlucky");
+        // }
 
         // Given a number N and an array A of N numbers. Print the smallest possible
         // result of Ai + Aj + j - i , where 1 ≤ i < j ≤ N.
