@@ -4,31 +4,53 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
-        while (T-- > 0) {
-            int N = sc.nextInt();
-            long[] A = new long[N];
-            for (int i = 0; i < N; i++) {
-                A[i] = sc.nextLong();
-            }
-            long count = 0;
-            long length = 1;
+        // permutation with array.
+        int N = sc.nextInt();
+        int[] A = new int[N];
+        int[] B = new int[N];
 
-            for (int i = 1; i < N; i++) {
-                if (A[i] >= A[i - 1]) {
-                    length++;
-                } else {
-                    count += length * (length + 1) / 2;
-                    length = 1;
-                }
-            }
-            count += length * (length + 1) / 2;
+        for (int i = 0; i < N; i++)
+            A[i] = sc.nextInt();
+        for (int i = 0; i < N; i++)
+            B[i] = sc.nextInt();
 
-            System.out.println(count);
+        Arrays.sort(A);
+        Arrays.sort(B);
+
+        if (Arrays.equals(A, B)) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
         }
         sc.close();
     }
 }
+
+// int T = sc.nextInt();
+// while (T-- > 0) {
+// int N = sc.nextInt();
+// long[] A = new long[N];
+// for (int i = 0; i < N; i++) {
+// A[i] = sc.nextLong();
+// }
+// long count = 0;
+// long length = 1;
+
+// for (int i = 1; i < N; i++) {
+// if (A[i] >= A[i - 1]) {
+// length++;
+// } else {
+// count += length * (length + 1) / 2;
+// length = 1;
+// }
+// }
+// count += length * (length + 1) / 2;
+
+// System.out.println(count);
+// }
+// sc.close();
+// }
+// }
 
 // for (int i = 1; i < N; i++) {
 // if (A[i] >= A[i - 1]) {
