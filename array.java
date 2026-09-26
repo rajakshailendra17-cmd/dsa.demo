@@ -4,27 +4,60 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // permutation with array.
         int N = sc.nextInt();
-        int[] A = new int[N];
-        int[] B = new int[N];
+        int M = sc.nextInt();
 
-        for (int i = 0; i < N; i++)
-            A[i] = sc.nextInt();
-        for (int i = 0; i < N; i++)
-            B[i] = sc.nextInt();
+        int[][] A = new int[N][M];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                A[i][j] = sc.nextInt();
+            }
+        }
 
-        Arrays.sort(A);
-        Arrays.sort(B);
+        int X = sc.nextInt();
 
-        if (Arrays.equals(A, B)) {
-            System.out.println("yes");
+        boolean found = false;
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                if (A[i][j] == X) {
+                    found = true;
+                    break;
+                }
+            }
+            if (found)
+                break;
+        }
+
+        if (found) {
+            System.out.println("will not take number");
         } else {
-            System.out.println("no");
+            System.out.println("will take number");
         }
         sc.close();
     }
 }
+
+// permutation with array.
+// int N = sc.nextInt();
+// int[] A = new int[N];
+// int[] B = new int[N];
+
+// for (int i = 0; i < N; i++)
+// A[i] = sc.nextInt();
+// for (int i = 0; i < N; i++)
+// B[i] = sc.nextInt();
+
+// Arrays.sort(A);
+// Arrays.sort(B);
+
+// if (Arrays.equals(A, B)) {
+// System.out.println("yes");
+// } else {
+// System.out.println("no");
+// }
+// sc.close();
+// }
+// }
 
 // int T = sc.nextInt();
 // while (T-- > 0) {
