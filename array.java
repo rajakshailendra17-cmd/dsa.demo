@@ -5,26 +5,53 @@ public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-        sc.close();
+        int[] A = new int[N];
+        int count = 0;
+        for (int i = 0; i < N; i++) {
+            A[i] = sc.nextInt();
+            if (A[i] % 2 == 0) {
+                count++;
+            }
 
-        System.out.println(fib(N));
-    }
-
-    public static long fib(int n) {
-        if (n == 1)
-            return 0;
-        if (n == 2)
-            return 1;
-
-        long a = 0, b = 1, c = 0;
-        for (int i = 3; i <= n; i++) {
-            c = a + b;
-            a = b;
-            b = c;
         }
-        return b;
+        int op = 0;
+        while (count == N) {
+            for (int i = 0; i < N; i++) {
+                A[i] /= 2;
+            }
+            count = 0;
+            for (int i = 0; i < N; i++) {
+                if (A[i] % 2 == 0) {
+                    count++;
+                }
+            }
+            op++;
+
+        }
+        System.out.println(op);
     }
 }
+// int N = sc.nextInt();
+// sc.close();
+
+// System.out.println(fib(N));
+// }
+
+// public static long fib(int n) {
+// if (n == 1)
+// return 0;
+// if (n == 2)
+// return 1;
+
+// long a = 0, b = 1, c = 0;
+// for (int i = 3; i <= n; i++) {
+// c = a + b;
+// a = b;
+// b = c;
+// }
+// return b;
+// }
+// }
 
 // Replace minmax.
 // int N = sc.nextInt();
