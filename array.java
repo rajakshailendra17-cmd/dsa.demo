@@ -4,19 +4,40 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // find contiguous subarray with maximum number in that subarray.
+        int T = sc.nextInt();
+
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            int[] A = new int[N];
+            for (int i = 0; i < N; i++) {
+                A[i] = sc.nextInt();
+            }
+            for (int i = 0; i < N; i++) {
+                int max = A[i];
+                for (int j = i; j < N; j++) {
+                    if (A[j] > max) {
+                        max = A[j];
+                    }
+                    System.out.print(max + " ");
+                }
+            }
+            System.out.println();
+        }
+
         // Given a number N and an array A of N digits (not separated by space). Print
         // the summation of these digits.
-        int N = sc.nextInt();
-        String digits = sc.next();
-        int[] A = new int[N];
-        for (int i = 0; i < N; i++) {
-            A[i] = digits.charAt(i) - '0';
-        }
-        int sum = 0;
-        for (int i = 0; i < N; i++) {
-            sum += A[i];
-        }
-        System.out.println(sum);
+        // int N = sc.nextInt();
+        // String digits = sc.next();
+        // int[] A = new int[N];
+        // for (int i = 0; i < N; i++) {
+        // A[i] = digits.charAt(i) - '0';
+        // }
+        // int sum = 0;
+        // for (int i = 0; i < N; i++) {
+        // sum += A[i];
+        // }
+        // System.out.println(sum);
 
         // int N = sc.nextInt();
         // int[] A = new int[N];
