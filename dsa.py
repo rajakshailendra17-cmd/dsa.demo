@@ -36,3 +36,25 @@
 # for i in range(1, 10):
 #     print(i)
 
+import tkinter as tk
+
+# Create main window
+root = tk.Tk()
+root.title("Hello Tkinter")
+
+# Add a label
+label = tk.Label(root, text="Welcome to Tkinter!")
+label.pack()
+
+# Add a button
+def say_hello():
+    label.config(text="Button clicked!")
+
+button = tk.Button(root, text="Click Me", command=say_hello)
+button.pack()
+
+# Start the GUI loop
+root.mainloop()
+
+
+
