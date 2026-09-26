@@ -4,33 +4,71 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] A = new int[N];
-        int count = 0;
-        for (int i = 0; i < N; i++) {
-            A[i] = sc.nextInt();
-            if (A[i] % 2 == 0) {
-                count++;
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            long[] A = new long[N];
+            for (int i = 0; i < N; i++) {
+                A[i] = sc.nextLong();
             }
+            long count = 0;
+            long length = 1;
 
-        }
-        int op = 0;
-        while (count == N) {
-            for (int i = 0; i < N; i++) {
-                A[i] /= 2;
-            }
-            count = 0;
-            for (int i = 0; i < N; i++) {
-                if (A[i] % 2 == 0) {
-                    count++;
+            for (int i = 1; i < N; i++) {
+                if (A[i] >= A[i - 1]) {
+                    length++;
+                } else {
+                    count += length * (length + 1) / 2;
+                    length = 1;
                 }
             }
-            op++;
+            count += length * (length + 1) / 2;
 
+            System.out.println(count);
         }
-        System.out.println(op);
+        sc.close();
     }
 }
+
+// for (int i = 1; i < N; i++) {
+// if (A[i] >= A[i - 1]) {
+// length++;
+// } else {
+// count += length * (length + 1) / 2;
+// length = 1;
+// }
+// }
+// count += length * (length + 1) / 2;
+
+// System.out.println(count);
+
+// int N = sc.nextInt();
+// int[] A = new int[N];
+// int count = 0;
+// for (int i = 0; i < N; i++) {
+// A[i] = sc.nextInt();
+// if (A[i] % 2 == 0) {
+// count++;
+// }
+
+// }
+// int op = 0;
+// while (count == N) {
+// for (int i = 0; i < N; i++) {
+// A[i] /= 2;
+// }
+// count = 0;
+// for (int i = 0; i < N; i++) {
+// if (A[i] % 2 == 0) {
+// count++;
+// }
+// }
+// op++;
+
+// }
+// System.out.println(op);
+// }
+// }
 // int N = sc.nextInt();
 // sc.close();
 
