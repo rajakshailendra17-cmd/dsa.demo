@@ -4,27 +4,46 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        // sorting using bubble sort.
         int N = sc.nextInt();
         int[] A = new int[N];
+
         for (int i = 0; i < N; i++) {
             A[i] = sc.nextInt();
         }
-
-        boolean isPalindrome = true;
-        for (int i = 0; i < N / 2; i++) {
-            if (A[i] != A[N - 1 - i]) {
-                isPalindrome = false;
-                break;
+        for (int i = 0; i < N - 1; i++) {
+            for (int j = 0; j < N - 1 - i; j++) {
+                if (A[j] > A[j + 1]) {
+                    int temp = A[j];
+                    A[j] = A[j + 1];
+                    A[j + 1] = temp;
+                }
             }
         }
 
-        if (isPalindrome) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
+        for (int i = 0; i < N; i++) {
+            System.out.print(A[i] + " ");
         }
-    
+
+        // int N = sc.nextInt();
+        // int[] A = new int[N];
+        // for (int i = 0; i < N; i++) {
+        // A[i] = sc.nextInt();
+        // }
+
+        // boolean isPalindrome = true;
+        // for (int i = 0; i < N / 2; i++) {
+        // if (A[i] != A[N - 1 - i]) {
+        // isPalindrome = false;
+        // break;
+        // }
+        // }
+
+        // if (isPalindrome) {
+        // System.out.println("YES");
+        // } else {
+        // System.out.println("NO");
+        // }
 
         // Given a number N and an array A of N numbers. Print the lowest number and its
         // position.
