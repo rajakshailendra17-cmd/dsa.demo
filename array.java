@@ -4,38 +4,62 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Given a number N and a 2D array A of size N * N. Print the absolute
+        // difference between the summation of its two diagonals (primary diagonal and
+        // secondary diagonal).
         int N = sc.nextInt();
-        int M = sc.nextInt();
-
-        int[][] A = new int[N][M];
+        int[][] A = new int[N][N];
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
+            for (int j = 0; j < N; j++) {
                 A[i][j] = sc.nextInt();
+
             }
         }
-
-        int X = sc.nextInt();
-
-        boolean found = false;
+        int sum1 = 0, sum2 = 0;
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                if (A[i][j] == X) {
-                    found = true;
-                    break;
-                }
-            }
-            if (found)
-                break;
-        }
+            sum1 += A[i][i];
+            sum2 += A[i][N - i -
+                    1];
 
-        if (found) {
-            System.out.println("will not take number");
-        } else {
-            System.out.println("will take number");
         }
+        System.out.println(Math.abs(sum1 - sum2));
         sc.close();
+
     }
 }
+
+// int N = sc.nextInt();
+// int M = sc.nextInt();
+
+// int[][] A = new int[N][M];
+// for (int i = 0; i < N; i++) {
+// for (int j = 0; j < M; j++) {
+// A[i][j] = sc.nextInt();
+// }
+// }
+
+// int X = sc.nextInt();
+
+// boolean found = false;
+// for (int i = 0; i < N; i++) {
+// for (int j = 0; j < M; j++) {
+// if (A[i][j] == X) {
+// found = true;
+// break;
+// }
+// }
+// if (found)
+// break;
+// }
+
+// if (found) {
+// System.out.println("will not take number");
+// } else {
+// System.out.println("will take number");
+// }
+// sc.close();
+// }
+// }
 
 // permutation with array.
 // int N = sc.nextInt();
