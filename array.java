@@ -1,32 +1,102 @@
-import java.util.Scanner;
-import java.util.Arrays;
+import java.util.*;
 
 public class array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a number N and a 2D array A of size N * N. Print the absolute
-        // difference between the summation of its two diagonals (primary diagonal and
-        // secondary diagonal).
+
         int N = sc.nextInt();
-        int[][] A = new int[N][N];
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                A[i][j] = sc.nextInt();
+        int M = sc.nextInt();
 
+        int[] A = new int[N];
+        for (int i = 0; i < N; i++) {
+            A[i] = sc.nextInt();
+        }
+
+        // Sort the array
+        Arrays.sort(A);
+
+        int[] freq = new int[M + 1]; // to store counts
+
+        // Count frequencies by scanning sorted array
+        int i = 0;
+        while (i < N) {
+            int value = A[i];
+            int count = 0;
+            while (i < N && A[i] == value) {
+                count++;
+                i++;
             }
+            freq[value] = count;
         }
-        int sum1 = 0, sum2 = 0;
-        for (int i = 0; i < N; i++) {
-            sum1 += A[i][i];
-            sum2 += A[i][N - i -
-                    1];
 
+        // Print frequencies for 1..M
+        for (int num = 1; num <= M; num++) {
+            System.out.println(freq[num]);
         }
-        System.out.println(Math.abs(sum1 - sum2));
+
         sc.close();
-
     }
 }
+
+
+
+
+
+        // Is B a subsequence of A ?
+
+    //     int n = sc.nextInt();
+    //     int m = sc.nextInt();
+
+    //     int[] A = new int[n];
+    //     int[] B = new int[m];
+
+    //     for (int i = 0; i < n; i++) {
+    //         A[i] = sc.nextInt();
+    //     }
+
+    //     for (int i = 0; i < m; i++) {
+    //         B[i] = sc.nextInt();
+    //     }
+
+    //     int j = 0;
+
+    //     for (int i = 0; i < n && j < m; i++) {
+    //         if (A[i] == B[j]) {
+    //             j++;
+    //         }
+    //     }
+
+    //     if (j == m) {
+    //         System.out.println("YES");
+    //     } else {
+    //         System.out.println("NO");
+    //     }
+    //     sc.close();
+    // }
+}
+// Given a number N and a 2D array A of size N * N. Print the absolute
+// difference between the summation of its two diagonals (primary diagonal and
+// secondary diagonal).
+// int N = sc.nextInt();
+// int[][] A = new int[N][N];
+// for (int i = 0; i < N; i++) {
+// for (int j = 0; j < N; j++) {
+// A[i][j] = sc.nextInt();
+
+// }
+// }
+// int sum1 = 0, sum2 = 0;
+// for (int i = 0; i < N; i++) {
+// sum1 += A[i][i];
+// sum2 += A[i][N - i -
+// 1];
+
+// }
+// System.out.println(Math.abs(sum1 - sum2));
+// sc.close();
+
+// }
+// }
 
 // int N = sc.nextInt();
 // int M = sc.nextInt();
