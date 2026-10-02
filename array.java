@@ -7,73 +7,53 @@ public class array {
         int N = sc.nextInt();
         int M = sc.nextInt();
 
-        int[] A = new int[N];
+        int[] freq = new int[M + 1];
+
         for (int i = 0; i < N; i++) {
-            A[i] = sc.nextInt();
+            int x = sc.nextInt();
+            freq[x]++;
         }
 
-        // Sort the array
-        Arrays.sort(A);
-
-        int[] freq = new int[M + 1]; // to store counts
-
-        // Count frequencies by scanning sorted array
-        int i = 0;
-        while (i < N) {
-            int value = A[i];
-            int count = 0;
-            while (i < N && A[i] == value) {
-                count++;
-                i++;
-            }
-            freq[value] = count;
-        }
-
-        // Print frequencies for 1..M
-        for (int num = 1; num <= M; num++) {
-            System.out.println(freq[num]);
+        for (int i = 1; i <= M; i++) {
+            System.out.println(freq[i]);
         }
 
         sc.close();
     }
 }
 
+// Is B a subsequence of A ?
 
+// int n = sc.nextInt();
+// int m = sc.nextInt();
 
+// int[] A = new int[n];
+// int[] B = new int[m];
 
+// for (int i = 0; i < n; i++) {
+// A[i] = sc.nextInt();
+// }
 
-        // Is B a subsequence of A ?
+// for (int i = 0; i < m; i++) {
+// B[i] = sc.nextInt();
+// }
 
-    //     int n = sc.nextInt();
-    //     int m = sc.nextInt();
+// int j = 0;
 
-    //     int[] A = new int[n];
-    //     int[] B = new int[m];
+// for (int i = 0; i < n && j < m; i++) {
+// if (A[i] == B[j]) {
+// j++;
+// }
+// }
 
-    //     for (int i = 0; i < n; i++) {
-    //         A[i] = sc.nextInt();
-    //     }
+// if (j == m) {
+// System.out.println("YES");
+// } else {
+// System.out.println("NO");
+// }
+// sc.close();
+// }
 
-    //     for (int i = 0; i < m; i++) {
-    //         B[i] = sc.nextInt();
-    //     }
-
-    //     int j = 0;
-
-    //     for (int i = 0; i < n && j < m; i++) {
-    //         if (A[i] == B[j]) {
-    //             j++;
-    //         }
-    //     }
-
-    //     if (j == m) {
-    //         System.out.println("YES");
-    //     } else {
-    //         System.out.println("NO");
-    //     }
-    //     sc.close();
-    // }
-}
 // Given a number N and a 2D array A of size N * N. Print the absolute
 // difference between the summation of its two diagonals (primary diagonal and
 // secondary diagonal).
