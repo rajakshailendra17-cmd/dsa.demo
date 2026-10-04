@@ -8,17 +8,29 @@ import java.util.Scanner;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        // Read two strings
+        // Read the entire line (like getline in C++)
         String S = sc.nextLine();
-        String T = sc.nextLine();
 
-        // Print lengths of S and T
-        System.out.println(S.length() + " " + T.length());
+        // Find the position of the first '\' character
+        int pos = S.indexOf('\\');
 
-        // Print concatenated string with space
-        System.out.println(S + " " + T);
+        // Print substring from beginning up to (but not including) '\'
+        System.out.println(S.substring(0, pos));
 
         sc.close();
     }
 }
+
+// // Read two strings
+// String S = sc.nextLine();
+// String T = sc.nextLine();
+
+// // Print lengths of S and T
+// System.out.println(S.length() + " " + T.length());
+
+// // Print concatenated string with space
+// System.out.println(S + " " + T);
+
+// sc.close();
+// }
+// }
