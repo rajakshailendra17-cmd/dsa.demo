@@ -8,15 +8,24 @@ import java.util.Scanner;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String S = sc.nextLine();
+        String T = sc.nextLine();
+        System.out.println(S.length() + " " + T.length());
+        System.out.println(S + T);
+        // i want to exchange the first character of S with the first character of T and
+        // print the new strings in a single line separated by space.
+        String s = T.charAt(0) + S.substring(1);
+        String t = S.charAt(0) + T.substring(1);
+        System.out.println(s + " " + t);
         // Given two strings X and Y . Print the smallest lexicographical one.
-        String X = sc.next();
-        String Y = sc.next();
+        // String X = sc.next();
+        // String Y = sc.next();
 
-        if (X.compareTo(Y) <= 0) {
-            System.out.println(X);
-        } else {
-            System.out.println(Y);
-        }
+        // if (X.compareTo(Y) <= 0) {
+        // System.out.println(X);
+        // } else {
+        // System.out.println(Y);
+        // }
         sc.close();
     }
 }
