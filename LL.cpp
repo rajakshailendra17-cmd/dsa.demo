@@ -158,22 +158,22 @@ int main()
     l.push_back(5);
 
     l.printll();
-    // l.insert(6, 1);
-    // l.printll();
-    cout << "enter a number to search"
-         << endl;
-    int key;
-    cin >> key;
-    int pos = l.search(key);
-    if (pos == -1)
-    {
-        cout << "not found" << endl;
-    }
-    else
-    {
+    l.insert(6, 3);
+    l.printll();
+    // cout << "enter a number to search"
+    //      << endl;
+    // int key;
+    // cin >> key;
+    // int pos = l.search(key);
+    // if (pos == -1)
+    // {
+    //     cout << "not found" << endl;
+    // }
+    // else
+    // {
 
-        cout << "found at position " << pos << endl;
-    }
+    //     cout << "found at position " << pos << endl;
+    // }
 
     return 0;
 }

@@ -8,18 +8,31 @@ import java.util.Scanner;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Read the entire line (like getline in C++)
-        String S = sc.nextLine();
+        // Given two strings X and Y . Print the smallest lexicographical one.
+        String X = sc.next();
+        String Y = sc.next();
 
-        // Find the position of the first '\' character
-        int pos = S.indexOf('\\');
-
-        // Print substring from beginning up to (but not including) '\'
-        System.out.println(S.substring(0, pos));
-
+        if (X.compareTo(Y) <= 0) {
+            System.out.println(X);
+        } else {
+            System.out.println(Y);
+        }
         sc.close();
     }
 }
+
+// // Read the entire line (like getline in C++)
+// String S = sc.nextLine();
+
+// // Find the position of the first '\' character
+// int pos = S.indexOf('\\');
+
+// // Print substring from beginning up to (but not including) '\'
+// System.out.println(S.substring(0, pos));
+
+// sc.close();
+// }
+// }
 
 // // Read two strings
 // String S = sc.nextLine();
