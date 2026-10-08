@@ -8,19 +8,36 @@ import java.util.Scanner;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a string S. Print the summation of its digits.
-        String S = sc.nextLine();
-        int sum = 0;
-        for (int i = 0; i < S.length(); i++) {
-            char c = S.charAt(i);
-            if (Character.isDigit(c)) {
-                sum += Character.getNumericValue(c);
+        int t = sc.nextInt();
+        sc.nextLine(); // Consume the newline character
+        while (t-- > 0) {
+            String S = sc.nextLine();
+            if (S.length() > 10) {
+
+                System.out.println("" + S.charAt(0) + (S.length() - 2) + S.charAt(S.length() - 1));
+
+            } else {
+
+                System.out.println(S);
             }
         }
-        System.out.println(sum);
         sc.close();
     }
 }
+
+// Given a string S. Print the summation of its digits.
+// String S = sc.nextLine();
+// int sum = 0;
+// for (int i = 0; i < S.length(); i++) {
+// char c = S.charAt(i);
+// if (Character.isDigit(c)) {
+// sum += Character.getNumericValue(c);
+// }
+// }
+// System.out.println(sum);
+// sc.close();
+// }
+// }
 
 // String S = sc.nextLine();
 // String T = sc.nextLine();
