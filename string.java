@@ -8,21 +8,38 @@ import java.util.Scanner;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        s = s.replace(',', ' ');
-        StringBuilder result = new StringBuilder();
-        for (char c : s.toCharArray()) {
-            if (Character.isLowerCase(c)) {
-                result.append(Character.toUpperCase(c));
-            } else if (Character.isUpperCase(c)) {
-                result.append(Character.toLowerCase(c));
+        // Given a string S. Determine whether this string is Good or Bad.
+        int T = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < T; i++) {
+            String s = sc.nextLine();
+            if (s.contains("010") || s.contains("101")) {
+                System.out.println("Good");
             } else {
-                result.append(c);
+                System.out.println("Bad");
             }
         }
-        System.out.println(result.toString());
+
+        sc.close();
     }
 }
+
+// String s = sc.nextLine();
+// s = s.replace(',', ' ');
+// StringBuilder result = new StringBuilder();
+// for (char c : s.toCharArray()) {
+// if (Character.isLowerCase(c)) {
+// result.append(Character.toUpperCase(c));
+// } else if (Character.isUpperCase(c)) {
+// result.append(Character.toLowerCase(c));
+// } else {
+// result.append(c);
+// }
+// }
+// System.out.println(result.toString());
+// }
+// }
 
 // int t = sc.nextInt();
 // sc.nextLine(); // Consume the newline character
