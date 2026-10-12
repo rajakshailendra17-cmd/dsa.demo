@@ -8,22 +8,34 @@ import java.util.Scanner;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a string S. Determine whether this string is Good or Bad.
-        int T = sc.nextInt();
-        sc.nextLine();
-
-        for (int i = 0; i < T; i++) {
-            String s = sc.nextLine();
-            if (s.contains("010") || s.contains("101")) {
-                System.out.println("Good");
-            } else {
-                System.out.println("Bad");
-            }
+        // Given a string S. Determine whether S is Palindrome or not
+        String S = sc.nextLine();
+        String T = new StringBuilder(S).reverse().toString();
+        if (S.equals(T)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
         }
-
         sc.close();
     }
 }
+
+// Given a string S. Determine whether this string is Good or Bad.
+// int T = sc.nextInt();
+// sc.nextLine();
+
+// for (int i = 0; i < T; i++) {
+// String s = sc.nextLine();
+// if (s.contains("010") || s.contains("101")) {
+// System.out.println("Good");
+// } else {
+// System.out.println("Bad");
+// }
+// }
+
+// sc.close();
+// }
+// }
 
 // String s = sc.nextLine();
 // s = s.replace(',', ' ');
