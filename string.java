@@ -8,22 +8,39 @@ import java.util.Scanner;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        sc.nextLine(); // Consume the newline character
-        while (t-- > 0) {
-            String S = sc.nextLine();
-            if (S.length() > 10) {
-
-                System.out.println("" + S.charAt(0) + (S.length() - 2) + S.charAt(S.length() - 1));
-
+        String s = sc.nextLine();
+        s = s.replace(',', ' ');
+        StringBuilder result = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (Character.isLowerCase(c)) {
+                result.append(Character.toUpperCase(c));
+            } else if (Character.isUpperCase(c)) {
+                result.append(Character.toLowerCase(c));
             } else {
-
-                System.out.println(S);
+                result.append(c);
             }
         }
-        sc.close();
+        System.out.println(result.toString());
     }
 }
+
+// int t = sc.nextInt();
+// sc.nextLine(); // Consume the newline character
+// while (t-- > 0) {
+// String S = sc.nextLine();
+// if (S.length() > 10) {
+
+// System.out.println("" + S.charAt(0) + (S.length() - 2) + S.charAt(S.length()
+// - 1));
+
+// } else {
+
+// System.out.println(S);
+// }
+// }
+// sc.close();
+// }
+// }
 
 // Given a string S. Print the summation of its digits.
 // String S = sc.nextLine();
