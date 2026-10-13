@@ -1,4 +1,4 @@
-#include <iostream>
+/* #include <iostream>
 using namespace std;
 
 class Node
@@ -175,5 +175,161 @@ int main()
     //     cout << "found at position " << pos << endl;
     // }
 
+    return 0;
+}*/
+// introducing doubly linked list
+#include <iostream>
+using namespace std;
+class Node
+{
+public:
+    int data;
+    Node *next; // pointer to next node
+    Node *prev; // pointer to previous node
+    Node(int val)
+    {
+        data = val;
+        next = prev = NULL; // initially next and previous pointers are pointing to NULL
+    }
+};
+class doublyLinkedList
+{
+    Node *head;
+    Node *tail;
+
+public:
+    doublyLinkedList()
+    {
+        head = tail = NULL;
+    }
+    void push_front(int val) // O(1)
+    {
+        Node *new_node = new Node(val);
+        if (head == NULL)
+        {
+            head = tail = new_node;
+            return;
+        }
+        else
+        {
+            new_node->next = head;
+            head->prev = new_node;
+            head = new_node;
+        }
+    }
+    void push_back(int val) // O(1)
+    {
+        Node *new_node = new Node(val);
+        if (head == NULL)
+        {
+            head = tail = new_node;
+            return;
+        }
+        else
+        {
+            tail->next = new_node;
+            new_node->prev = tail;
+            tail = new_node;
+        }
+    }
+    void pop_front() // O(1)
+    {
+        if (head == NULL)
+        {
+            return;
+        }
+        else if (head == tail) // only one node
+        {
+            delete head;
+            head = tail = NULL;
+            return;
+        }
+        else
+        {
+            Node *temp = head;
+            head = head->next;
+            head->prev = NULL;
+            temp->next = NULL;
+            delete temp;
+        }
+    }
+    void pop_back() // O(1)
+    {
+        if (head == NULL)
+        {
+            return;
+        }
+        else if (head == tail) // only one node
+        {
+            delete head;
+            head = tail = NULL;
+            return;
+        }
+        else
+        {
+            Node *temp = tail;
+            tail = tail->prev;
+            tail->next = NULL;
+            temp->prev = NULL;
+            delete temp;
+        }
+    }
+    void insert(int val, int pos) // O(n)
+    {
+        if (pos < 0)
+        {
+            cout << "invalid position" << endl;
+            return;
+        }
+        else if (pos == 0)
+        {
+            push_front(val);
+            return;
+        }
+        else
+        {
+            Node *temp = head;
+            for (int i = 0; i < pos - 1; i++)
+            {
+                if (temp == NULL)
+                {
+                    cout << "invalid position" << endl;
+                    return;
+                }
+                temp = temp->next;
+            }
+            Node *newNode = new Node(val);
+            newNode->next = temp->next;
+            newNode->prev = temp;
+            if (temp->next != NULL)
+            {
+                temp->next->prev = newNode;
+            }
+            temp->next = newNode;
+        }
+    }
+    void printll() // O(n)
+    {
+        Node *temp = head;
+        while (temp != NULL)
+        {
+            cout << temp->data << "<-->";
+            temp = temp->next;
+        }
+        cout << "NULL" << endl;
+    }
+};
+int main()
+{
+    doublyLinkedList dll;
+    dll.push_front(1);
+    dll.push_front(2);
+    dll.push_front(3);
+    dll.push_back(4);
+    dll.push_back(5);
+    dll.pop_front();
+    dll.pop_back();
+    dll.insert(10, 2);
+    dll.printll();
     return 0;
 }

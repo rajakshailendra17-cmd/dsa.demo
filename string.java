@@ -8,17 +8,65 @@ import java.util.Scanner;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a string S. Determine whether S is Palindrome or not
-        String S = sc.nextLine();
-        String T = new StringBuilder(S).reverse().toString();
-        if (S.equals(T)) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
+        int N = sc.nextInt(); // number of test cases
+
+        for (int t = 0; t < N; t++) {
+            String S = sc.next();
+            String T = sc.next();
+
+            String result = "";
+            int minLen = Math.min(S.length(), T.length());
+
+            // merge characters one by one
+            for (int i = 0; i < minLen; i++) {
+                result += S.charAt(i);
+                result += T.charAt(i);
+            }
+
+            // add remaining characters if any
+            if (S.length() > minLen) {
+                result += S.substring(minLen);
+            }
+            if (T.length() > minLen) {
+                result += T.substring(minLen);
+            }
+
+            System.out.println(result);
         }
+
         sc.close();
     }
 }
+
+// Given a string S. Determine how many times does each letter occurred in S
+// String S = sc.nextLine();
+// int[] count = new int[26];
+// for (int i = 0; i < S.length(); i++) {
+// char c = S.charAt(i);
+// if (Character.isLetter(c)) {
+// count[Character.toLowerCase(c) - 'a']++;
+// }
+// }
+// for (int i = 0; i < 26; i++) {
+// if (count[i] > 0) {
+// System.out.println((char) (i + 'a') + " : " + count[i]);
+// }
+// }
+// sc.close();
+// }
+// }
+
+// Given a string S. Determine whether S is Palindrome or not
+// String S = sc.nextLine();
+// String T = new StringBuilder(S).reverse().toString();
+// if (S.equals(T)) {
+// System.out.println("YES");
+// } else {
+// System.out.println("NO");
+// }
+// sc.close();
+// }
+// }
 
 // Given a string S. Determine whether this string is Good or Bad.
 // int T = sc.nextInt();
