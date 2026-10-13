@@ -8,92 +8,119 @@ import java.util.*;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        // Read N (string size) and Q (number of queries)
-        int n = sc.nextInt();
-        int q = sc.nextInt();
-
-        // Read the initial string
         String s = sc.next();
-        StringBuilder sb = new StringBuilder(s);
+        String target = "hello";
+        int targetIndex = 0;
 
-        // Process each query
-        for (int i = 0; i < q; i++) {
-            String queryType = sc.next();
+        // Loop through each character of the input string
+        for (int i = 0; i < s.length(); i++) {
+            // If the character matches the current character we need from "hello"
+            if (s.charAt(i) == target.charAt(targetIndex)) {
+                targetIndex++; // Move to the next character in "hello"
+            }
 
-            switch (queryType) {
-                case "pop_back":
-                    // Remove the last character
-                    sb.deleteCharAt(sb.length() - 1);
-                    break;
-
-                case "front":
-                    // Print the first character
-                    System.out.println(sb.charAt(0));
-                    break;
-
-                case "back":
-                    // Print the last character
-                    System.out.println(sb.charAt(sb.length() - 1));
-                    break;
-
-                case "sort":
-                    // Read 1-based indices, convert to 0-based
-                    int sortL = sc.nextInt() - 1;
-                    int sortR = sc.nextInt() - 1;
-
-                    // Ensure l <= r
-                    int startS = Math.min(sortL, sortR);
-                    int endS = Math.max(sortL, sortR);
-
-                    // Extract, sort, and replace the substring
-                    char[] subArray = sb.substring(startS, endS + 1).toCharArray();
-                    Arrays.sort(subArray);
-                    sb.replace(startS, endS + 1, new String(subArray));
-                    break;
-
-                case "reverse":
-                    // Read 1-based indices, convert to 0-based
-                    int revL = sc.nextInt() - 1;
-                    int revR = sc.nextInt() - 1;
-
-                    int startR = Math.min(revL, revR);
-                    int endR = Math.max(revL, revR);
-
-                    // Reverse the specific range using a temporary StringBuilder
-                    StringBuilder sub = new StringBuilder(sb.substring(startR, endR + 1));
-                    sub.reverse();
-                    sb.replace(startR, endR + 1, sub.toString());
-                    break;
-
-                case "print":
-                    // Print the character at 1-based index (pos - 1)
-                    int pos = sc.nextInt() - 1;
-                    System.out.println(sb.charAt(pos));
-                    break;
-
-                case "substr":
-                    // Read 1-based indices, convert to 0-based
-                    int subL = sc.nextInt() - 1;
-                    int subR = sc.nextInt() - 1;
-
-                    int startSub = Math.min(subL, subR);
-                    int endSub = Math.max(subL, subR);
-
-                    // Print the substring range
-                    System.out.println(sb.substring(startSub, endSub + 1));
-                    break;
-
-                case "push_back":
-                    // Append the given character to the end
-                    String x = sc.next();
-                    sb.append(x);
-                    break;
+            // If we have matched all 5 characters of "hello", we can stop early
+            if (targetIndex == 5) {
+                break;
             }
         }
+
+        // If targetIndex reached 5, it means all characters were found in order
+        if (targetIndex == 5) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+
         sc.close();
     }
 }
+
+// // Read N (string size) and Q (number of queries)
+// int n = sc.nextInt();
+// int q = sc.nextInt();
+
+// // Read the initial string
+// String s = sc.next();
+// StringBuilder sb = new StringBuilder(s);
+
+// // Process each query
+// for (int i = 0; i < q; i++) {
+// String queryType = sc.next();
+
+// switch (queryType) {
+// case "pop_back":
+// // Remove the last character
+// sb.deleteCharAt(sb.length() - 1);
+// break;
+
+// case "front":
+// // Print the first character
+// System.out.println(sb.charAt(0));
+// break;
+
+// case "back":
+// // Print the last character
+// System.out.println(sb.charAt(sb.length() - 1));
+// break;
+
+// case "sort":
+// // Read 1-based indices, convert to 0-based
+// int sortL = sc.nextInt() - 1;
+// int sortR = sc.nextInt() - 1;
+
+// // Ensure l <= r
+// int startS = Math.min(sortL, sortR);
+// int endS = Math.max(sortL, sortR);
+
+// // Extract, sort, and replace the substring
+// char[] subArray = sb.substring(startS, endS + 1).toCharArray();
+// Arrays.sort(subArray);
+// sb.replace(startS, endS + 1, new String(subArray));
+// break;
+
+// case "reverse":
+// // Read 1-based indices, convert to 0-based
+// int revL = sc.nextInt() - 1;
+// int revR = sc.nextInt() - 1;
+
+// int startR = Math.min(revL, revR);
+// int endR = Math.max(revL, revR);
+
+// // Reverse the specific range using a temporary StringBuilder
+// StringBuilder sub = new StringBuilder(sb.substring(startR, endR + 1));
+// sub.reverse();
+// sb.replace(startR, endR + 1, sub.toString());
+// break;
+
+// case "print":
+// // Print the character at 1-based index (pos - 1)
+// int pos = sc.nextInt() - 1;
+// System.out.println(sb.charAt(pos));
+// break;
+
+// case "substr":
+// // Read 1-based indices, convert to 0-based
+// int subL = sc.nextInt() - 1;
+// int subR = sc.nextInt() - 1;
+
+// int startSub = Math.min(subL, subR);
+// int endSub = Math.max(subL, subR);
+
+// // Print the substring range
+// System.out.println(sb.substring(startSub, endSub + 1));
+// break;
+
+// case "push_back":
+// // Append the given character to the end
+// String x = sc.next();
+// sb.append(x);
+// break;
+// }
+// }
+// sc.close();
+// }
+// }
 
 // int N = sc.nextInt(); // number of test cases
 
