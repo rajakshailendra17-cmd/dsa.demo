@@ -3,40 +3,127 @@
 // Print the length of S and T separated by space.
 // Print a new string that contains S and T separated by a space.
 
-import java.util.Scanner;
+import java.util.*;
 
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt(); // number of test cases
 
-        for (int t = 0; t < N; t++) {
-            String S = sc.next();
-            String T = sc.next();
+        // Read N (string size) and Q (number of queries)
+        int n = sc.nextInt();
+        int q = sc.nextInt();
 
-            String result = "";
-            int minLen = Math.min(S.length(), T.length());
+        // Read the initial string
+        String s = sc.next();
+        StringBuilder sb = new StringBuilder(s);
 
-            // merge characters one by one
-            for (int i = 0; i < minLen; i++) {
-                result += S.charAt(i);
-                result += T.charAt(i);
+        // Process each query
+        for (int i = 0; i < q; i++) {
+            String queryType = sc.next();
+
+            switch (queryType) {
+                case "pop_back":
+                    // Remove the last character
+                    sb.deleteCharAt(sb.length() - 1);
+                    break;
+
+                case "front":
+                    // Print the first character
+                    System.out.println(sb.charAt(0));
+                    break;
+
+                case "back":
+                    // Print the last character
+                    System.out.println(sb.charAt(sb.length() - 1));
+                    break;
+
+                case "sort":
+                    // Read 1-based indices, convert to 0-based
+                    int sortL = sc.nextInt() - 1;
+                    int sortR = sc.nextInt() - 1;
+
+                    // Ensure l <= r
+                    int startS = Math.min(sortL, sortR);
+                    int endS = Math.max(sortL, sortR);
+
+                    // Extract, sort, and replace the substring
+                    char[] subArray = sb.substring(startS, endS + 1).toCharArray();
+                    Arrays.sort(subArray);
+                    sb.replace(startS, endS + 1, new String(subArray));
+                    break;
+
+                case "reverse":
+                    // Read 1-based indices, convert to 0-based
+                    int revL = sc.nextInt() - 1;
+                    int revR = sc.nextInt() - 1;
+
+                    int startR = Math.min(revL, revR);
+                    int endR = Math.max(revL, revR);
+
+                    // Reverse the specific range using a temporary StringBuilder
+                    StringBuilder sub = new StringBuilder(sb.substring(startR, endR + 1));
+                    sub.reverse();
+                    sb.replace(startR, endR + 1, sub.toString());
+                    break;
+
+                case "print":
+                    // Print the character at 1-based index (pos - 1)
+                    int pos = sc.nextInt() - 1;
+                    System.out.println(sb.charAt(pos));
+                    break;
+
+                case "substr":
+                    // Read 1-based indices, convert to 0-based
+                    int subL = sc.nextInt() - 1;
+                    int subR = sc.nextInt() - 1;
+
+                    int startSub = Math.min(subL, subR);
+                    int endSub = Math.max(subL, subR);
+
+                    // Print the substring range
+                    System.out.println(sb.substring(startSub, endSub + 1));
+                    break;
+
+                case "push_back":
+                    // Append the given character to the end
+                    String x = sc.next();
+                    sb.append(x);
+                    break;
             }
-
-            // add remaining characters if any
-            if (S.length() > minLen) {
-                result += S.substring(minLen);
-            }
-            if (T.length() > minLen) {
-                result += T.substring(minLen);
-            }
-
-            System.out.println(result);
         }
-
         sc.close();
     }
 }
+
+// int N = sc.nextInt(); // number of test cases
+
+// for (int t = 0; t < N; t++) {
+// String S = sc.next();
+// String T = sc.next();
+
+// String result = "";
+// int minLen = Math.min(S.length(), T.length());
+
+// // merge characters one by one
+// for (int i = 0; i < minLen; i++) {
+// result += S.charAt(i);
+// result += T.charAt(i);
+// }
+
+// // add remaining characters if any
+// if (S.length() > minLen) {
+// result += S.substring(minLen);
+// }
+// if (T.length() > minLen) {
+// result += T.substring(minLen);
+// }
+
+// System.out.println(result);
+// }
+
+// sc.close();
+// }
+// }
 
 // Given a string S. Determine how many times does each letter occurred in S
 // String S = sc.nextLine();
