@@ -8,23 +8,39 @@ import java.util.*;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Given a string S. Print number of words in it.
+        // Given a string S. For each word in S reverse its letters then print it.
         String S = sc.nextLine();
-
-        // Replace punctuation with spaces
         S = S.replaceAll("[!.,?]", " ");
-
-        // Split by one or more spaces
         String[] words = S.trim().split("\\s+");
-
-        // Handle empty input case
-        if (S.trim().isEmpty()) {
-            System.out.println(0);
-        } else {
-            System.out.println(words.length);
+        for (int i = 0; i < words.length; i++) {
+            String reversedWord = new StringBuilder(words[i]).reverse().toString();
+            if (i == words.length - 1) {
+                System.out.print(reversedWord); // last word → no space
+            } else {
+                System.out.print(reversedWord + " ");
+            }
         }
+
     }
 }
+
+// Given a string S. Print number of words in it.
+// String S = sc.nextLine();
+
+// // Replace punctuation with spaces
+// S = S.replaceAll("[!.,?]", " ");
+
+// // Split by one or more spaces
+// String[] words = S.trim().split("\\s+");
+
+// // Handle empty input case
+// if (S.trim().isEmpty()) {
+// System.out.println(0);
+// } else {
+// System.out.println(words.length);
+// }
+// }
+// }
 // String s = sc.next();
 // String target = "hello";
 // int targetIndex = 0;
