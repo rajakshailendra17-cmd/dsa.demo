@@ -194,6 +194,7 @@ public:
 };
 class doublyLinkedList
 {
+public:
     Node *head;
     Node *tail;
 
@@ -318,6 +319,74 @@ public:
         }
         cout << "NULL" << endl;
     }
+
+    // delete any node
+    void delNode(int pos)
+    {
+        if (head == NULL)
+        {
+            cout << "List is empty" << endl;
+            return;
+        }
+        if (pos == 0)
+        {
+            Node *temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+        Node *temp = head;
+        for (int i = 0; i < pos; i++)
+        {
+            if (temp->next == NULL)
+            {
+                cout << "Invalid position" << endl;
+                return;
+            }
+            temp = temp->next;
+        }
+        Node *temp2 = temp->next;
+        temp->next = temp2->next;
+        delete temp2;
+        return;
+    }
+    // delete any node when the pointer of that node is given.
+    void deleteNode(Node *node)
+    {
+        if (head == NULL)
+        {
+            cout << "List is empty" << endl;
+            return;
+        }
+        if (node == head)
+        {
+            Node *temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+        Node *temp = head;
+        while (temp->next != node)
+        {
+            if (temp->next == NULL)
+            {
+                cout << "Node not found" << endl;
+                return;
+            }
+            temp = temp->next;
+        }
+        if (temp->next == node)
+        {
+            temp->next = node->next;
+            delete node;
+            return;
+        }
+        else
+        {
+            cout << "Node not found" << endl;
+            return;
+        }
+    }
 };
 int main()
 {
@@ -330,6 +399,19 @@ int main()
     dll.pop_front();
     dll.pop_back();
     dll.insert(10, 2);
+    dll.push_back(5);
+    Node *temp = dll.head;
+    int pos = 2; // 3rd node means position index 2
+    for (int i = 0; i < pos && temp != NULL; i++)
+    {
+        temp = temp->next;
+    }
+
+    if (temp != NULL)
+    {
+        dll.deleteNode(temp); // delete the 3rd node
+    }
+    dll.delNode(3);
     dll.printll();
     return 0;
 }

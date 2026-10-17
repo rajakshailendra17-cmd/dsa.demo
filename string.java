@@ -8,33 +8,50 @@ import java.util.*;
 public class string {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.next();
-        String target = "hello";
-        int targetIndex = 0;
+        // Given a string S. Print number of words in it.
+        String S = sc.nextLine();
 
-        // Loop through each character of the input string
-        for (int i = 0; i < s.length(); i++) {
-            // If the character matches the current character we need from "hello"
-            if (s.charAt(i) == target.charAt(targetIndex)) {
-                targetIndex++; // Move to the next character in "hello"
-            }
+        // Replace punctuation with spaces
+        S = S.replaceAll("[!.,?]", " ");
 
-            // If we have matched all 5 characters of "hello", we can stop early
-            if (targetIndex == 5) {
-                break;
-            }
-        }
+        // Split by one or more spaces
+        String[] words = S.trim().split("\\s+");
 
-        // If targetIndex reached 5, it means all characters were found in order
-        if (targetIndex == 5) {
-            System.out.println("YES");
+        // Handle empty input case
+        if (S.trim().isEmpty()) {
+            System.out.println(0);
         } else {
-            System.out.println("NO");
+            System.out.println(words.length);
         }
-
-        sc.close();
     }
 }
+// String s = sc.next();
+// String target = "hello";
+// int targetIndex = 0;
+
+// // Loop through each character of the input string
+// for (int i = 0; i < s.length(); i++) {
+// // If the character matches the current character we need from "hello"
+// if (s.charAt(i) == target.charAt(targetIndex)) {
+// targetIndex++; // Move to the next character in "hello"
+// }
+
+// // If we have matched all 5 characters of "hello", we can stop early
+// if (targetIndex == 5) {
+// break;
+// }
+// }
+
+// // If targetIndex reached 5, it means all characters were found in order
+// if (targetIndex == 5) {
+// System.out.println("YES");
+// } else {
+// System.out.println("NO");
+// }
+
+// sc.close();
+// }
+// }
 
 // // Read N (string size) and Q (number of queries)
 // int n = sc.nextInt();
