@@ -135,6 +135,33 @@ int isFull(struct stack *ptr)
         return 0;
     }
 }
+void push(struct stack *ptr, int val)
+{
+    if (isFull(ptr))
+    {
+        cout << "Stack Overflow! Cannot push " << val << " to the stack\n";
+    }
+    else
+    {
+        ptr->top++;
+        ptr->arr[ptr->top] = val;
+        cout << "Pushed " << val << " to the stack\n";
+    }
+}
+int pop(struct stack *ptr)
+{
+    if (isEmpty(ptr))
+    {
+        cout << "Stack Underflow! Cannot pop from the stack\n";
+        return -1;
+    }
+    else
+    {
+        int val = ptr->arr[ptr->top];
+        ptr->top--;
+        return val;
+    }
+}
 int main()
 {
     struct stack *s = new stack();
@@ -150,5 +177,9 @@ int main()
     {
         cout << "Stack is not empty\n";
     }
+    push(s, 10);
+    push(s, 20);
+    int val = pop(s);
+    cout << "Popped value is: " << val << "\n";
     return 0;
 }
