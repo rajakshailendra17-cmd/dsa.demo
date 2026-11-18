@@ -8,38 +8,62 @@ public class string {
 
         String s = sc.nextLine();
 
-        int count = 0;
-        int start = 0;
-        int total = 0;
-        String result = "";
+        String arr[] = s.split("\\?");
 
-        for (int i = 0; i < s.length(); i++) {
+        String parameters[] = arr[1].split("&");
 
-            if (s.charAt(i) == 'L') {
-                count++;
-            } else {
-                count--;
-            }
+        for (int i = 0; i < parameters.length; i++) {
 
-            if (count == 0) {
-                total++;
+            String data[] = parameters[i].split("=");
 
-                result += s.substring(start, i + 1) + " ";
-
-                start = i + 1;
-            }
-
-        }
-
-        System.out.println(total);
-        String parts[] = result.trim().split(" ");
-        for (int i = 0; i < parts.length; i++) {
-            System.out.println(parts[i]);
+            System.out.println(data[0] + ": " + data[1]);
         }
 
         sc.close();
     }
 }
+
+// import java.util.Scanner;
+
+// public class string {
+// public static void main(String[] args) {
+
+// Scanner sc = new Scanner(System.in);
+
+// String s = sc.nextLine();
+
+// int count = 0;
+// int start = 0;
+// int total = 0;
+// String result = "";
+
+// for (int i = 0; i < s.length(); i++) {
+
+// if (s.charAt(i) == 'L') {
+// count++;
+// } else {
+// count--;
+// }
+
+// if (count == 0) {
+// total++;
+
+// result += s.substring(start, i + 1) + " ";
+
+// start = i + 1;
+// }
+
+// }
+
+// System.out.println(total);
+// String parts[] = result.trim().split(" ");
+// for (int i = 0; i < parts.length; i++) {
+// System.out.println(parts[i]);
+// }
+
+// sc.close();
+// }
+// }
 
 // Given two strings S and T. Print 2 lines that contain the following in the
 // same order:
