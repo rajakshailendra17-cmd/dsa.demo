@@ -1,28 +1,71 @@
 
-// Given two strings S and T. Print 2 lines that contain the following in the same order:
-// Print the length of S and T separated by space.
-// Print a new string that contains S and T separated by a space.
-
-import java.util.*;
+import java.util.Scanner;
 
 public class string {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        // Given a string S. For each word in S reverse its letters then print it.
-        String S = sc.nextLine();
-        S = S.replaceAll("[!.,?]", " ");
-        String[] words = S.trim().split("\\s+");
-        for (int i = 0; i < words.length; i++) {
-            String reversedWord = new StringBuilder(words[i]).reverse().toString();
-            if (i == words.length - 1) {
-                System.out.print(reversedWord); // last word → no space
+
+        String s = sc.nextLine();
+
+        int count = 0;
+        int start = 0;
+        int total = 0;
+        String result = "";
+
+        for (int i = 0; i < s.length(); i++) {
+
+            if (s.charAt(i) == 'L') {
+                count++;
             } else {
-                System.out.print(reversedWord + " ");
+                count--;
             }
+
+            if (count == 0) {
+                total++;
+
+                result += s.substring(start, i + 1) + " ";
+
+                start = i + 1;
+            }
+
         }
 
+        System.out.println(total);
+        String parts[] = result.trim().split(" ");
+        for (int i = 0; i < parts.length; i++) {
+            System.out.println(parts[i]);
+        }
+
+        sc.close();
     }
 }
+
+// Given two strings S and T. Print 2 lines that contain the following in the
+// same order:
+// Print the length of S and T separated by space.
+// Print a new string that contains S and T separated by a space.
+
+// import java.util.*;
+
+// public class string {
+// public static void main(String[] args) {
+// Scanner sc = new Scanner(System.in);
+// // Given a string S. For each word in S reverse its letters then print it.
+// String S = sc.nextLine();
+// S = S.replaceAll("[!.,?]", " ");
+// String[] words = S.trim().split("\\s+");
+// for (int i = 0; i < words.length; i++) {
+// String reversedWord = new StringBuilder(words[i]).reverse().toString();
+// if (i == words.length - 1) {
+// System.out.print(reversedWord); // last word → no space
+// } else {
+// System.out.print(reversedWord + " ");
+// }
+// }
+
+// }
+// }
 
 // Given a string S. Print number of words in it.
 // String S = sc.nextLine();
