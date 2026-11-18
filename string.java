@@ -6,22 +6,69 @@ public class string {
 
         Scanner sc = new Scanner(System.in);
 
-        String s = sc.nextLine();
+        String s = sc.nextLine().toLowerCase();
 
-        String arr[] = s.split("\\?");
+        int e = 0, g = 0, y = 0, p = 0, t = 0;
 
-        String parameters[] = arr[1].split("&");
+        for (int i = 0; i < s.length(); i++) {
 
-        for (int i = 0; i < parameters.length; i++) {
+            char ch = s.charAt(i);
 
-            String data[] = parameters[i].split("=");
-
-            System.out.println(data[0] + ": " + data[1]);
+            if (ch == 'e')
+                e++;
+            else if (ch == 'g')
+                g++;
+            else if (ch == 'y')
+                y++;
+            else if (ch == 'p')
+                p++;
+            else if (ch == 't')
+                t++;
         }
+
+        int min = e;
+
+        if (g < min)
+            min = g;
+
+        if (y < min)
+            min = y;
+
+        if (p < min)
+            min = p;
+
+        if (t < min)
+            min = t;
+
+        System.out.println(min);
 
         sc.close();
     }
 }
+
+// import java.util.Scanner;
+
+// public class string {
+// public static void main(String[] args) {
+
+// Scanner sc = new Scanner(System.in);
+
+// String s = sc.nextLine();
+
+// String arr[] = s.split("\\?");
+
+// String parameters[] = arr[1].split("&");
+
+// for (int i = 0; i < parameters.length; i++) {
+
+// String data[] = parameters[i].split("=");
+
+// System.out.println(data[0] + ": " + data[1]);
+// }
+
+// sc.close();
+// }
+// }
 
 // import java.util.Scanner;
 
