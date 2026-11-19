@@ -6,41 +6,11 @@ public class string {
 
         Scanner sc = new Scanner(System.in);
 
-        String s = sc.nextLine().toLowerCase();
+        String s = sc.nextLine();
 
-        int e = 0, g = 0, y = 0, p = 0, t = 0;
+        s = s.replace("EGYPT", " ");
 
-        for (int i = 0; i < s.length(); i++) {
-
-            char ch = s.charAt(i);
-
-            if (ch == 'e')
-                e++;
-            else if (ch == 'g')
-                g++;
-            else if (ch == 'y')
-                y++;
-            else if (ch == 'p')
-                p++;
-            else if (ch == 't')
-                t++;
-        }
-
-        int min = e;
-
-        if (g < min)
-            min = g;
-
-        if (y < min)
-            min = y;
-
-        if (p < min)
-            min = p;
-
-        if (t < min)
-            min = t;
-
-        System.out.println(min);
+        System.out.println(s);
 
         sc.close();
     }
