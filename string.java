@@ -6,15 +6,50 @@ public class string {
 
         Scanner sc = new Scanner(System.in);
 
-        String s = sc.nextLine();
+        int n = sc.nextInt();
+        String s = sc.next();
 
-        s = s.replace("EGYPT", " ");
+        String Original = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-        System.out.println(s);
+        String Key = "PgEfTYaWGHjDAmxQqFLRpCJBownyUKZXkbvzIdshurMilNSVOtec#@_!=.+-*/";
+
+        String ans = "";
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char ch = s.charAt(i);
+
+            if (n == 1) {
+                int pos = Original.indexOf(ch);
+                ans = ans + Key.charAt(pos);
+            } else {
+                int pos = Key.indexOf(ch);
+                ans = ans + Original.charAt(pos);
+            }
+        }
+
+        System.out.println(ans);
 
         sc.close();
     }
 }
+
+// import java.util.Scanner;
+
+// public class string {
+// public static void main(String[] args) {
+
+// Scanner sc = new Scanner(System.in);
+
+// String s = sc.nextLine();
+
+// s = s.replace("EGYPT", " ");
+
+// System.out.println(s);
+
+// sc.close();
+// }
+// }
 
 // import java.util.Scanner;
 
